@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/index.html</loc>
+  <lastmod>2019-12-15T18:09:46+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/webshop.html</loc>
+  <lastmod>2019-12-15T18:09:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/blog/blog.html</loc>
+  <lastmod>2019-12-15T18:09:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/contact.html</loc>
+  <lastmod>2019-12-15T18:09:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/informatie/informatie.html</loc>
+  <lastmod>2019-12-15T18:09:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/producten/honing/langnese-bijenhoning-goudhelder-250-gram.html</loc>
+  <lastmod>2019-12-15T18:10:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/producten/honing/index.html</loc>
+  <lastmod>2019-12-15T18:10:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://mme19b-andre.cmmstudents.nl/mm-a-2/pages/blog/honing-met-kaneel-een-gouden-combinatie.html</loc>
+  <lastmod>2019-12-15T18:09:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

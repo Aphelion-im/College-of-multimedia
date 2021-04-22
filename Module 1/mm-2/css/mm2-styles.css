@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+/* Algemene rules */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	font-family: 'Open Sans', Verdana, sans-serif;
+	height: 100%;
+}
+
+body {
+	background: rgb(2, 0, 36);
+	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+	color: #fff;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 1280px;
+	position: relative;
+}
+
+.container {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+/* rowHeader om met floats te kunnen werken voor de opdracht. 
+Deze row zorgt ervoor dat bepaalde UI elementen netjes omlaag worden geduwd.
+Ik heb zowel position: absolute/relative & floats gebruikt */
+.rowHeader {
+	height: 268px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+/* Text wrap voor afbeeldingen */
+.textWrap {
+	margin: 0 24px 24px 24px;
+}
+
+/* Clearfix floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Om onderdelen uit te kunnen zetten op specifieke pagina's */
+.invisible {
+	display: none;
+}
+
+/* Elementen centreren */
+.center {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Geef afbeeldingen een ronde omcirkeling */
+.rond {
+	border-radius: 50%;
+}
+
+/* Maak een kader om de foto */
+.kader {
+	border: 3px ridge #979797;
+}
+
+/* Definitie headers H1-H3 */
+h1,
+h2,
+h3 {
+	font-family: 'Cinzel', serif;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3.5rem;
+	margin: 24px;
+}
+
+h2 {
+	font-size: 2rem;
+	margin: 24px;
+}
+
+h3 {
+	font-size: 1.5rem;
+	margin: 24px;
+}
+
+/* Hyperlinks algemeen */
+a:link {
+	color: #fff;
+}
+
+a:visited {
+	color: #1d80a6;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	color: red;
+}
+
+/* Header area. Menu sigils, wings and logo */
+header {
+	background-color: black;
+	background-image: url("../images/ui/black-background-optimized.jpg");
+	color: #fff;
+	font-family: 'Cinzel', serif;
+	font-size: 1rem;
+	width: 1280px;
+	height: 209px;
+	border: 3px ridge #979797;
+	border-radius: 0 0 50% 50%;
+	position: fixed;
+	z-index: 100;
+}
+
+/* Logo */
+.logo {
+	position: absolute;
+	top: 8px;
+}
+
+/* Main menu */
+.menuMain {
+	position: absolute;
+	top: 14px;
+	width: 400px;
+}
+
+.menuMain ul {
+	list-style-type: none;
+}
+
+.menuMain ul li {
+	display: inline-block;
+	margin: 0 25px;
+}
+
+/* Social media */
+.social {
+	color: #fff;
+	font-size: 1.5rem;
+	position: absolute;
+	right: 20px;
+	top: 65px;
+}
+
+.social>a {
+	margin: 0 10px;
+}
+
+.social a:link,
+.social a:visited {
+	color: #fff;
+}
+
+.social a:hover {
+	-webkit-box-shadow: 0 0 50px #1d80a6;
+	-webkit-text-shadow: 0 0 50px #1d80a6;
+	box-shadow: 0 0 50px #1d80a6;
+	text-shadow: 0 0 50px #1d80a6;
+}
+
+/* Wings vormige menu */
+.uiWings {
+	position: absolute;
+	bottom: -60px;
+	width: 976px;
+	height: 108px;
+	margin: 0 auto;
+}
+
+.houseSigil {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	border: 3px ridge #979797;
+	-webkit-transition: padding .5s, box-shadow .5s, text-shadow .5s;
+	transition: box-shadow .5s, text-shadow .5s;
+	padding: 2px;
+}
+
+.houseSigil:hover {
+	-webkit-box-shadow: 0 0 50px #1d80a6;
+	-webkit-text-shadow: 0 0 50px #1d80a6;
+	box-shadow: 0 0 50px #1d80a6;
+	text-shadow: 0 0 50px #1d80a6;
+	border: 3px ridge rgb(0, 183, 255);
+}
+
+/* Naambordjes */
+span.names {
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+
+span.names a:link,
+span.names a:visited,
+.breadcrumbs a:link,
+.breadcrumbs a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+span.names a:hover,
+span.names a:active,
+.breadcrumbs a:hover,
+.breadcrumbs a:active {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* Left Menu */
+.leftMenu {
+	background: url('../images/ui/left-menu-empty-v2.png');
+	font-family: 'Cinzel', serif;
+	width: 150px;
+	height: 504px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 160px;
+	z-index: 99;
+	float: left;
+	border: 3px ridge #979797;
+	border-radius: 0 50% 50% 0;
+}
+
+.leftMenuItems {
+	height: 400px;
+	width: 75%;
+	position: absolute;
+	top: 55px;
+	left: 10px;
+}
+
+/* Left menu character menu */
+.leftMenu ul {
+	list-style-type: none;
+}
+
+.leftMenu ul li {
+	display: block;
+	margin: 25px 0;
+	text-align: center;
+}
+
+/* Left menu characters */
+.characters {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	border: 3px ridge #979797;
+	-webkit-transition: padding .5s, box-shadow .5s, text-shadow .5s;
+	transition: box-shadow .5s, text-shadow .5s;
+	padding: 2px;
+}
+
+.characters:hover {
+	-webkit-box-shadow: 0 0 50px #1d80a6;
+	-webkit-text-shadow: 0 0 50px #1d80a6;
+	box-shadow: 0 0 50px #1d80a6;
+	text-shadow: 0 0 50px #1d80a6;
+	border: 3px ridge rgb(0, 183, 255);
+}
+
+/* Left menu prev/next knoppen */
+.buttonUp {
+	position: absolute;
+	top: -15px;
+	left: 45px;
+	color: #e4bb24;
+	font-size: 24px;
+	transition: .5s;
+}
+
+.buttonDown {
+	position: absolute;
+	bottom: -15px;
+	left: 45px;
+	color: #e4bb24;
+	font-size: 24px;
+	transition: .5s;
+}
+
+.buttonUp:hover,
+.buttonDown:hover {
+	color: #fff;
+	-webkit-box-shadow: 0 0 50px #1d80a6;
+	-webkit-text-shadow: 0 0 50px #1d80a6;
+	box-shadow: 0 0 50px #1d80a6;
+	text-shadow: 0 0 50px #1d80a6;
+}
+
+.buttonUp:active,
+.buttonDown:active {
+	color: red;
+}
+
+/* Big Sigil kader met enorme House sigil/logo */
+.bigSigil {
+	border-radius: 24px;
+	width: 960px;
+	border: 3px ridge #979797;
+	background-color: rgba(0, 0, 0, 0.7);
+	height: auto;
+	margin: 0 auto;
+	padding: 24px;
+}
+
+/* Main content */
+.mainContent {
+	border-radius: 24px;
+	font-family: 'Open Sans', Verdana, sans-serif;
+	width: 960px;
+	padding: 24px;
+	border: 3px ridge #979797;
+	background-color: rgba(0, 0, 0, 0.7);
+	height: auto;
+	margin: 8px auto;
+}
+
+.mainContent p {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin: 0 0 16px 0;
+}
+
+.mainContent a:link {
+	color: #1d80a6;
+}
+
+.mainContent a:visited {
+	color: #7b906f;
+}
+
+.sigil {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+/* Reduceer afbeeldingen voor het content kader */
+.foto {
+	width: 370px;
+	height: auto;
+}
+
+/* Voor 2 kolom layouts. Ik hou hier Bootstrap-achtige benamingen aan, bijvoorbeeld. col-md-6. */
+.col-6 {
+	float: left;
+	width: 50%;
+	padding: 0 10px 0 0;
+}
+
+/* Voor 3 kolom layouts. */
+.col-4 {
+	float: left;
+	width: 33.33%;
+	padding: 0 10px 0 0;
+}
+
+/* Voor actieve webpagina's. Deze rule lager in de cascade plaatsen ivm andere prioriteiten */
+.active {
+	border-radius: 0px;
+	border: 3px ridge #1d80a6;
+	padding: 2px;
+}
+
+/* Footer */
+.copyright {
+	background-color: black;
+	background-image: url("../images/ui/black-background-optimized.jpg");
+	background-position: center center;
+	color: #fff;
+	font-family: 'Cinzel', serif;
+	font-size: 0.7rem;
+	width: 960px;
+	border: 3px ridge #979797;
+	border-radius: 0 0 48px 48px;
+	text-align: center;
+	padding: 15px;
+}

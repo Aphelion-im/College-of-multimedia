@@ -1,0 +1,62 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# https://github.com/github/gitignore for more .gitignore options
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# College of Multimedia
+/curriculum-module-3.txt
+/Module 1/_cmm
+/Module 1/he-1/_source
+/Module 1/he-2/_aangeleverd
+/Module 1/he-2/_source
+/Module 1/mm-1/_source
+/Module 1/mm-2/_aangeleverd
+/Module 1/mm-2/_source
+/Module 1/mm-a-1/_source
+/Module 1/mm-a-2/_aangeleverd
+/Module 1/mm-a-2/_source

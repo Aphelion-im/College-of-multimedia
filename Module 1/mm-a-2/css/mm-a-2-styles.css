@@ -1,0 +1,1596 @@
+@charset "UTF-8";
+
+/* ALGEMENE RULES */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Test classes */
+.test {
+	border: 1px solid red;
+}
+
+.test2 {
+	border: 1px solid green;
+}
+
+/* Buttons fix voor de Apple */
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: none;
+}
+
+/* Algemene rules */
+html {
+	font-family: 'Noto Sans', Verdana, sans-serif;
+	height: 100%;
+	color: #000;
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+.container {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+::selection {
+	background-color: #7678ED;
+	color: #fff;
+}
+
+/* COMPONENTEN */
+/* Item naar links */
+.left {
+	float: left;
+}
+
+/* Item naar rechts */
+.right {
+	float: right;
+}
+
+/* Clearfix floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.fix {
+	/* Fix voor de 3 form inputs naast elkaar */
+	font-size: 0;
+}
+
+/* Text wrap voor afbeeldingen */
+.textWrap {
+	margin: 0 24px 24px 24px;
+}
+
+/* Om onderdelen uit te kunnen zetten op specifieke pagina's */
+.invisible {
+	display: none;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+/* Maak een ronde afbeelding */
+.rond {
+	border-radius: 50%;
+}
+
+/* Maak een kader om de foto */
+.kader {
+	border: 3px ridge #7678ED;
+}
+
+/* Reduceer afbeeldingen voor het product kader */
+.foto {
+	width: 150px;
+	height: auto;
+}
+
+.margin-small {
+	margin: 8px 0;
+}
+
+/* Rijen en kolommen */
+/* 1/3 kolom */
+.kol-1-3 {
+	width: 33.33%;
+}
+
+/* 2/3 kolom */
+.kol-2-3 {
+	width: 66.66%;
+}
+
+/* 1/4 kolom */
+.kol-1-4 {
+	width: 25%;
+}
+
+.kol-2-4,
+.kol-1-2 {
+	width: 50%;
+}
+
+.kol-3-4 {
+	width: 75%;
+}
+
+/* TYPOGRAFIE */
+/* Definitie headers H1-H3 */
+h1,
+h2 {
+	font-family: 'Boogaloo', serif;
+}
+
+h1 {
+	color: #1B1B1E;
+	font-size: 4.5rem;
+}
+
+h2 {
+	color: #363537;
+	font-size: 3.5rem;
+}
+
+h3 {
+	color: #363537;
+	font-family: 'Noto Sans', Verdana, sans-serif;
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+p {
+	color: #1B1B1E;
+}
+
+/* Voor actieve webpagina's. De active rule lager in de cascade plaatsen ivm andere prioriteiten of !important */
+.active {
+	color: #5246bd !important;
+}
+
+.active:hover {
+	color: #7678ED !important;
+}
+
+/* HEADER */
+/* Social, Main menu en logo */
+header {
+	height: auto;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+/* Social */
+.social {
+	background-color: #1B1B1E;
+	color: #F7F8FA;
+	font-size: 0.7rem;
+	padding: 9px 24px 9px 0;
+}
+
+.social ul li {
+	display: inline-block;
+	margin: 0 0 0 24px;
+}
+
+.social a:link,
+.social a:visited {
+	color: #F7F8FA;
+	text-decoration: none;
+	transition: color 0.5s;
+}
+
+.social a:hover,
+.social a:active {
+	color: #7678ED;
+}
+
+/* Main menu */
+.mainMenu {
+	background-color: #FEC710;
+	padding: 24px 0;
+}
+
+.schaduw {
+	-webkit-box-shadow: 0 4px 4px -2px #BFB7B6;
+	-moz-box-shadow: 0 4px 4px -2px #BFB7B6;
+	box-shadow: 0 4px 4px -2px #BFB7B6;
+}
+
+.mainMenu ul {
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	left: 11px;
+}
+
+.mainMenu ul li {
+	display: inline-block;
+	margin: 0 40px;
+}
+
+.mainMenu ul li a {
+	color: #37323E;
+	font-size: 1rem;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color 0.5s;
+}
+
+.mainMenu ul li a:hover {
+	color: #6668cc;
+}
+
+.logo {
+	width: 180px;
+	height: 118px;
+	position: absolute;
+	top: -24px;
+	left: 411px;
+}
+
+/* Knoppen */
+.knopInloggen {
+	background-color: #6668cc;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 10px 34px;
+	position: absolute;
+	right: 24px;
+	top: 45px;
+	z-index: 200;
+	transition: background-color 0.25s ease;
+}
+
+.knopSlider {
+	background-color: #6668cc;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 20px 34px;
+	transition: background-color 0.25s ease;
+}
+
+.knopInloggen:hover,
+.knopSlider:hover {
+	background-color: #3d348b;
+	text-decoration: none;
+}
+
+/* SECTIE: SLIDER */
+/* Slider */
+.slider {
+	width: 1280px;
+	height: 720px;
+	position: relative;
+}
+
+.sliderImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+/* Winkelwagen */
+.winkelwagen {
+	background-color: #989CA3;
+	border-radius: 15px 0 0 15px;
+	position: absolute;
+	right: 0%;
+	top: 160px;
+	padding: 8px 12px;
+	z-index: 99;
+}
+
+.winkelwagen .icoon {
+	width: 24px;
+	height: 24px;
+	filter: invert(100%);
+	transition: filter .5s;
+}
+
+.winkelwagen .icoon:hover {
+	filter: invert(0%);
+}
+
+.sliderText {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 160px 0 48px 0;
+	font-size: 1.5rem;
+	line-height: 2.75rem;
+	text-align: center;
+}
+
+.sliderText p:last-of-type {
+	margin-bottom: 124px;
+}
+
+.sliderHeader {
+	text-transform: uppercase;
+	-webkit-text-stroke: 1px #FEC710;
+	margin: 0 0 72px 0;
+}
+
+.pagination {
+	margin-top: 48px;
+}
+
+.pagination li {
+	display: inline-block;
+}
+
+.pagination a:link,
+.pagination a:visited {
+	color: #707070;
+}
+
+/* Benefits */
+.benefits {
+	background-color: #F7F7F9;
+	color: #363537;
+	font-size: 0.8rem;
+	text-align: center;
+	padding: 8px 0;
+}
+
+.benefits .icoon {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+/* Producten */
+.producten {
+	background-color: #DFE0E1;
+	padding: 64px 0;
+	height: auto;
+	text-align: center;
+	/* margin: auto; */
+}
+
+.productenKader {
+	width: 930px;
+	height: 754px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: space-between;
+	margin: 0 auto;
+}
+
+.productenH2 {
+	text-transform: capitalize;
+	margin-bottom: 32px;
+}
+
+.productKader {
+	background-color: #F7F7F9;
+	width: 216px;
+	height: 356px;
+	position: relative;
+	margin: 0 8px 8px 8px;
+}
+
+.productKader a:link {
+	color: inherit;
+}
+
+.productKaderTop {
+	height: 203px;
+	width: 216px;
+}
+
+.productKaderBodem {
+	background-color: #Fff;
+	height: 155px;
+	width: 216px;
+	padding: 24px;
+}
+
+.aanbieding {
+	font-size: 8px;
+	font-weight: 700;
+	color: #fff;
+	background-color: #33A1FD;
+	border-radius: 40px;
+	padding: 9px 14px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.addToCart {
+	font-size: 24px;
+	color: #7678ED;
+	border-radius: 40px;
+	padding: 9px 14px;
+	position: absolute;
+	right: 10px;
+	top: 160px;
+	transition: color 0.5s;
+}
+
+.addToCart:hover {
+	color: #3d348b;
+}
+
+.addToCart:active {
+	color: #8b3434;
+}
+
+.productImage {
+	width: 80px;
+	height: auto;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transition: transform 0.5s;
+}
+
+.effect:hover {
+	transform: scale(1.1);
+}
+
+.nieuwePrijs {
+	color: #363537;
+	margin: 10px 8px;
+}
+
+.prijsNormaal {
+	color: #989CA3;
+	text-decoration: line-through;
+	margin: 10px 8px;
+}
+
+.gewicht {
+	color: #989CA3;
+	font-size: 0.6em;
+	margin: 10px 0;
+}
+
+.productNaam {
+	color: #363537;
+	font-weight: 700;
+	margin: 10px 0;
+}
+
+.productNaam a:link,
+.productCategorie a:link {
+	text-decoration: none;
+	transition: color 0.5s;
+}
+
+.productNaam a:visited {
+	color: #363537;
+}
+
+.productNaam a:hover,
+.productCategorie a:hover {
+	color: #989CA3;
+}
+
+.productCategorie {
+	color: #33A1FD;
+	font-size: 0.8rem;
+	font-weight: 700;
+	margin: 10px 0;
+}
+
+.beoordeling {
+	color: #989CA3;
+	margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+	background-color: #F7F7F9;
+	border-top: 3px solid #F1C40F;
+	height: auto;
+}
+
+footer a:link {
+	color: #6D6A75;
+	text-decoration: none;
+}
+
+footer a:visited {
+	color: #6D6A75;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer a:active {
+	color: #6D6A75;
+}
+
+a[href^="tel:"] {
+	color: #6D6A75;
+}
+
+.miniFooter {
+	text-align: center;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 24px 0;
+}
+
+.footerLogo+p {
+	margin-top: 8px;
+}
+
+.footerLogo {
+	width: 101px;
+	height: 66px;
+}
+
+.navFooter {
+	text-align: center;
+	padding: 64px 16px;
+	width: 985px;
+	margin: 0 auto;
+}
+
+.navFooter ul {
+	color: #6D6A75;
+	margin-top: 24px;
+	font-size: 0.8rem;
+	line-height: 1.6rem;
+}
+
+.navFooter ul.socialFooter {
+	margin-top: 8px;
+}
+
+.volgOns {
+	color: #363537;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-top: 24px;
+}
+
+.socialFooter li {
+	display: inline-block;
+	margin: 0 8px;
+}
+
+.socialFooter li a {
+	color: #1B1B1E;
+	font-size: 1rem;
+	transition: color 0.5s;
+}
+
+.socialFooter a:hover,
+.socialFooter a:active {
+	color: #7678ED;
+}
+
+.betalingFooter {
+	background-color: #FDFFFC;
+	padding: 8px 0;
+	text-align: center;
+}
+
+.betalingFooter .icoon {
+	vertical-align: middle;
+	margin: 0 8px;
+}
+
+/* Betaling iconen afmetingen */
+.ideal {
+	width: 16px;
+	height: 16px;
+}
+
+.mastercard {
+	width: 26.6px;
+	height: auto;
+}
+
+.visa {
+	width: 45px;
+	height: auto;
+}
+
+.paypal {
+	width: 60px;
+	height: auto;
+}
+
+/* Email nieuwsbrief veld */
+input[type="email"].inputEmail {
+	background-color: #fff;
+	width: 100px;
+	height: 25px;
+	border: 1px solid #33a1fd;
+	padding: 4px 4px;
+	vertical-align: middle;
+}
+
+input[type="email"]:focus,
+.loginKlantForm input[type="text"]:focus,
+.loginKlantForm input[type="password"]:focus,
+.contactFormulier input[type="email"]:focus .contactFormulier input[type="text"]:focus {
+	display: inline-block;
+	outline: none;
+	border: 1px solid #7678ED;
+}
+
+.inputEmail {
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	font-size: 0.6rem;
+}
+
+.subscribeButton {
+	background-color: #33a1fd;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Noto Sans', Verdana, sans-serif;
+	font-size: 0.6rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	height: 25px;
+	padding: 0 16px;
+	vertical-align: middle;
+	transition: background-color 0.5s;
+}
+
+.subscribeButton:hover {
+	background-color: #33a2fdcc;
+}
+
+.subscribeButton:active {
+	position: relative;
+	top: 2px;
+	left: 1px;
+}
+
+/* Reviews producten - sterren */
+.reviews-star-1:before {
+	color: #989CA3;
+	content: "\f005";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+.reviews-star-2:before {
+	color: #989CA3;
+	content: "\f005\f005";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+.reviews-star-3:before {
+	color: #989CA3;
+	content: "\f005\f005\f005";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+.reviews-star-4:before {
+	color: #989CA3;
+	content: "\f005\f005\f005\f005";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+.reviews-star-5:before {
+	color: #989CA3;
+	content: "\f005\f005\f005\f005\f005";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+.reviews-star-half:after {
+	color: #989CA3;
+	content: "\f089";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+/* WORDPRESS */
+.wordpressBackground {
+	background-color: #F1F1F1;
+}
+
+.wordpressLogo {
+	display: block;
+	width: 84px;
+	height: 84px;
+	margin: 125px auto 24px auto;
+}
+
+.wordpressLoginForm {
+	background-color: #fff;
+	border: 1px solid #BFBDC1;
+	width: 320px;
+	height: 260px;
+	margin: 0 auto;
+	padding: 24px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	position: relative;
+}
+
+.wordpressLoginForm input[type="text"],
+.wordpressLoginForm input[type="password"] {
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	width: 100%;
+	padding: 10px 4px;
+}
+
+.wordpressLoginForm .submitButton {
+	color: #fff;
+	background-color: #0085ba;
+	border: 1px solid #006799;
+	border-radius: 3px;
+	position: absolute;
+	right: 24px;
+	bottom: 24px;
+	padding: 8px 15px;
+}
+
+.submitButton:hover {
+	color: #fff;
+	background-color: #0085baee;
+}
+
+.gaTerugText {
+	display: block;
+	font-size: 0.8rem;
+	margin-top: 48px;
+	text-align: center;
+}
+
+.wordpressLoginForm label {
+	color: #363537;
+	font-size: 0.8rem;
+	display: block;
+	margin: 24px 0 4px 0;
+}
+
+.wordpressLoginForm .onthoudMij {
+	position: absolute;
+	left: 24px;
+	bottom: 24px;
+}
+
+.wordpressLoginForm .onthoudMij+span {
+	font-size: 0.7rem;
+	position: absolute;
+	left: 44px;
+	bottom: 28px;
+}
+
+/* LOGIN KLANT */
+.loginKlant {
+	background-color: #DFE0E1;
+	margin: 0 auto;
+	padding: 32px 0 48px 0;
+}
+
+.loginKlantForm {
+	width: 600px;
+	position: relative;
+	height: 305px;
+	margin: 0 auto;
+	padding: 8px 0 48px 0;
+}
+
+.loginKlantForm label {
+	color: #363537;
+	font-size: 0.8rem;
+	display: block;
+	margin: 24px 0 4px 0;
+}
+
+.loginKlantForm input[type="text"],
+.loginKlantForm input[type="password"] {
+	border-radius: 8px;
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	width: 100%;
+	padding: 10px 8px;
+	border: 1px solid #33A1FD;
+}
+
+.blueText,
+.blueText a:link,
+.blueText a:visited {
+	color: #33A1FD;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.blueText a:hover {
+	color: #989CA3;
+}
+
+.loginKlantForm .submitButton {
+	color: #fff;
+	background-color: #33A1FD;
+	border: 1px solid #33A1FD;
+	border-radius: 3px;
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	text-transform: uppercase;
+	font-weight: 700;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	padding: 12px 24px;
+	transition: background-color 0.25s;
+}
+
+.loginKlantForm .submitButton:hover {
+	color: #33A1FD;
+	border: 1px solid #33A1FD;
+	background-color: #ffffffee;
+}
+
+.loginKlantForm .onthoudMij {
+	position: absolute;
+	left: 0px;
+	bottom: 52px;
+}
+
+.loginKlantForm .onthoudMij+span {
+	font-size: 0.7rem;
+	position: absolute;
+	left: 24px;
+	bottom: 56px;
+}
+
+/* Generieke pagina's */
+.generiekAchtergrond {
+	width: 1280px;
+	height: 500px;
+}
+
+.generiekContent {
+	height: 500px;
+	position: relative;
+}
+
+.generiekHeader {
+	text-transform: uppercase;
+	-webkit-text-stroke: 1px #FEC710;
+	margin: 0 0 72px 0;
+}
+
+.headerPositie {
+	position: absolute;
+	top: 120px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.breadcrumbs {
+	position: absolute;
+	top: 424px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.breadcrumbs a:link,
+.breadcrumbs a:visited {
+	text-decoration: none;
+	color: #363537;
+}
+
+.breadcrumbs a:hover {
+	text-decoration: underline;
+}
+
+/* Contactpagina & Google maps */
+.googleMaps {
+	width: 1280px;
+	height: 420px;
+}
+
+.contact {
+	width: 1000px;
+	margin: 48px auto;
+	height: 327px;
+}
+
+.contactFormulier {
+	position: relative;
+	height: 300px;
+}
+
+.contactFormulier .submitButton {
+	color: #fff;
+	background-color: #33A1FD;
+	border: 1px solid #33A1FD;
+	border-radius: 3px;
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	text-transform: uppercase;
+	font-weight: 700;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	padding: 12px 24px;
+	transition: background-color 0.25s;
+	cursor: pointer;
+}
+
+.contactFormulier .submitButton:hover {
+	color: #33A1FD;
+	border: 1px solid #33A1FD;
+	background-color: #ffffffee;
+}
+
+.contactGegevens {
+	padding: 0 16px 0 0;
+}
+
+.contactGegevens h2 {
+	margin-bottom: 16px;
+}
+
+.contactFormulier h2 {
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.contactFormulier input[type="text"],
+.contactFormulier input[type="tel"],
+.contactFormulier input[type="email"] {
+	border: 1px solid #BFBDC1;
+	padding: 8px 8px;
+	width: 32%;
+	margin: 0 4px;
+	border-radius: 8px;
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	outline: none;
+}
+
+.contactFormulier textarea {
+	color: #989CA3;
+	border-radius: 8px;
+	font-family: "Noto Sans", Verdana, sans-serif !important;
+	width: 653px;
+	padding: 8px 8px;
+	outline: none;
+	margin: 16px 4px;
+}
+
+.contactFormulier input[type="text"]:focus,
+.contactFormulier input[type="email"]:focus,
+.contactFormulier input[type="tel"]:focus,
+.contactFormulier textarea:focus {
+	border: 1px solid #7678ED;
+	;
+}
+
+.contactGegevens p {
+	margin-bottom: 24px;
+	line-height: 24px;
+}
+
+/* Productpagina details */
+.product {
+	position: relative;
+	width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 48px 0;
+}
+
+.product .productKader {
+	background-color: #F7F7F9;
+	border: 1px solid #BFBDC1;
+	width: 260px;
+	height: 260px;
+	margin: 0;
+	padding: 0;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.product .productKader img {
+	width: 100px;
+	height: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 50px;
+	transition: transform 0.5s;
+}
+
+/* Product detail kader */
+.productDetailKader {
+	background-color: #fff;
+	width: 379px;
+	height: auto;
+	line-height: 24px;
+	margin: 0 48px;
+}
+
+.productDetailKader .nieuwePrijs,
+.productDetailKader .prijsNormaal {
+	font-family: Boogaloo, Verdana, sans-serif;
+	font-size: 1.5rem;
+}
+
+.productDetailKader button {
+	background-color: #33a1fd;
+	border: 1px solid #33a1fd;
+	border-radius: 8px;
+	font-weight: 700;
+	color: #fff;
+	height: 24px;
+	padding: 0 16px;
+	outline: none;
+	cursor: pointer;
+	transition: background-color 0.25s;
+}
+
+.productDetailKader button:hover {
+	color: #33A1FD;
+	border: 1px solid #33A1FD;
+	background-color: #ffffffee;
+}
+
+.productDetailKader input {
+	height: 24px;
+}
+
+.productDetailKader p {
+	margin-bottom: 24px;
+	line-height: 24px;
+}
+
+.product .sidebar {
+	width: 222px;
+}
+
+.product .nieuwePrijs {
+	color: #363537;
+	margin: 10px 0;
+}
+
+.sidebar input {
+	border: 1px solid #BFBDC1;
+	border-radius: 8px;
+	padding: 8px 8px;
+	outline: none;
+}
+
+.sidebar input:focus {
+	border: 1px solid #7678ED;
+}
+
+.tabbladen {
+	width: 958px;
+	height: 266px;
+	padding: 0 0;
+	margin-top: 16px;
+}
+
+.tab-button {
+	font-family: Boogaloo, Verdana, sans-serif;
+	font-size: 1.5rem;
+	background-color: #33a1fd;
+	border: 1px solid #33a1fd;
+	border-radius: 8px;
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+	transition: background-color 0.25s;
+}
+
+.tab-button:hover {
+	color: #33A1FD;
+	border: 1px solid #33A1FD;
+	background-color: #ffffffee;
+}
+
+.tab-bar {
+	border-bottom: 1px solid #BFBDC1;
+}
+
+.tab {
+	padding: 16px 0;
+}
+
+.tabbladen h3 {
+	font-size: 1rem;
+	margin: 16px 0 8px 0;
+}
+
+.sidebar h3,
+.sidebar .searchContainer {
+	margin: 0 0 16px 0;
+}
+
+.sidebar a:link,
+.sidebar a:visited {
+	color: #3C3C3B;
+	text-decoration: none;
+}
+
+.sidebar a:hover {
+	color: #33a1fd;
+}
+
+/* Webshop */
+.productZoekenSorteren {
+	background-color: #DFE0E1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 48px 0 0 0;
+}
+
+.searchContainer input {
+	border: 1px solid #BFBDC1;
+	border-radius: 8px;
+	outline: none;
+	padding: 8px 24px 8px 8px;
+}
+
+.searchContainer a:link,
+.searchContainer a:visited {
+	color: #363537;
+}
+
+.searchContainer a:hover {
+	color: #7678ED;
+}
+
+.searchContainer input:focus {
+	border: 1px solid #7678ED;
+}
+
+.productZoeken {
+	width: 400px;
+	padding: 0 0 48px 0;
+}
+
+.productSorteren {
+	width: 400px;
+	text-align: right;
+}
+
+.productCategorieFilter {
+	width: 800px;
+}
+
+.productZoekenSorteren h2 {
+	display: inline-block;
+	margin-bottom: 16px;
+}
+
+.productSorteren h2:after {
+	content: "\f0dc";
+	color: #363537;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 2.5rem;
+	margin-left: 8px;
+}
+
+.productCategorieFilter p:before {
+	content: "\f0b0";
+	color: #363537;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 1rem;
+	margin-right: 8px;
+}
+
+.productCategorieFilter p {
+	line-height: 24px;
+}
+
+/* BLOG */
+.blog {
+	background-color: #DFE0E1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 48px 0;
+	position: relative;
+}
+
+.sidebar p:before {
+	content: "\f07b";
+	color: #363537;
+	font-family: "Font Awesome 5 Free";
+	font-size: 1rem;
+	margin-right: 8px;
+}
+
+.blogArtikel {
+	background-color: #FFF;
+	border: 3px solid #BFBDC1;
+	border-radius: 8px;
+	width: 600px;
+	height: auto;
+	margin-bottom: 16px;
+}
+
+.blogArtikel img {
+	width: 100%;
+	height: 500px;
+}
+
+.blogArtikel .artikelTekst {
+	padding: 16px 16px 16px 24px;
+}
+
+.artikelTekst h2,
+.artikelTekst p {
+	margin-bottom: 16px;
+}
+
+.blog .sidebar {
+	width: 300px;
+	margin-left: 48px;
+}
+
+.blog a:link,
+.blog a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.blog a:hover {
+	color: #989CA3;
+}
+
+/* Zoekresultaten artikelen */
+.zoekresultatenArtikelen {
+	background-color: #DFE0E1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 48px 0;
+	height: auto;
+}
+
+.zoekresultatenArtikelen .resultaat {
+	background-color: #fff;
+	border: 1px solid #BFBDC1;
+	border-radius: 8px;
+	width: 964px;
+	height: 236px;
+	padding: 24px;
+}
+
+.zoekresultatenArtikelen .resultaat h2,
+.zoekresultatenArtikelen .resultaat p {
+	margin-bottom: 16px;
+}
+
+.resultaat {
+	position: relative;
+}
+
+.zoekresultatenArtikelen .resultaat .datum {
+	position: absolute;
+	bottom: 5px;
+	font-weight: 700;
+}
+
+.zoekresultatenArtikelen .resultaat .leesMeer {
+	position: absolute;
+	bottom: 5px;
+	right: 24px;
+	font-weight: 700;
+}
+
+.zoekresultatenArtikelen a:link,
+.zoekresultatenArtikelen a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.zoekresultatenArtikelen a:hover {
+	color: #989CA3;
+}
+
+/* Los blog artikel */
+.artikelGebied {
+	background-color: #DFE0E1;
+	height: auto;
+	padding: 48px 0;
+}
+
+.artikelGebied .losArtikel {
+	background-color: #fff;
+	border: 3px solid #BFBDC1;
+	border-radius: 8px;
+	width: 600px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.artikelGebied .losArtikel .content {
+	position: relative;
+	padding: 0 16px 24px 16px;
+}
+
+.artikelGebied .losArtikel .content h2,
+.artikelGebied .losArtikel .content p {
+	margin: 24px 0;
+}
+
+.content p,
+.content ul {
+	line-height: 24px;
+}
+
+.losArtikel .mainImg {
+	width: 100%;
+	height: auto;
+	margin-bottom: 16px;
+}
+
+.artikelGebied .losArtikel .content .datum {
+	font-weight: 700;
+}
+
+.artikelGebied .losArtikel .content .artikelSocial {
+	display: inline-block;
+	color: #363537;
+	text-align: right;
+}
+
+.content header {
+	margin-bottom: 8px;
+}
+
+.artikelGebied a:link,
+.artikelGebied a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.artikelGebied a:hover {
+	color: #989CA3;
+}
+
+.artikelSocial ul li {
+	display: inline-block;
+	margin: 0 4px;
+}
+
+.content .artikelList {
+	list-style-type: disc;
+	text-indent: 16px;
+}
+
+.content .artikelList li {
+	margin: 16px 0;
+}
+
+.losArtikel .artikelSocial ul {
+	line-height: 1rem;
+}
+
+/* Winkelwagen */
+.winkelwagenGebied {
+	background-color: #DFE0E1;
+	height: auto;
+	padding: 48px 0;
+}
+
+.winkelwagenGebied .inhoudWinkelWagen {
+	background-color: #fff;
+	border: 1px solid #BFBDC1;
+	border-radius: 8px;
+	width: 964px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 0 48px 0;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+	position: relative;
+	z-index: 1;
+}
+
+.inhoudWinkelWagen header.kopjes {
+	background-color: #33A1FD;
+	border-radius: 8px 8px 0 0;
+	color: #fff;
+	font-weight: 700;
+	text-align: center;
+	padding: 8px;
+}
+
+.inhoudWinkelWagen .contentWinkelWagen {
+	padding: 16px;
+}
+
+.inhoudWinkelWagen .coupon {
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+}
+
+.inhoudWinkelWagen .buttonUpDate {
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+
+}
+
+.contentWinkelWagen p {
+	line-height: 16px;
+}
+
+.coupon input {
+	border: 1px solid #BFBDC1;
+	outline: none;
+	padding: 4px 8px;
+}
+
+.coupon input:focus {
+	border: 1px solid #7678ED;
+}
+
+.coupon .buttonToepassen,
+.inhoudWinkelWagen .buttonUpDate {
+	background-color: #33A1FD;
+	border: 1px solid #33A1FD;
+	border-radius: 4px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	font-weight: 700;
+	padding: 4px 8px;
+	cursor: pointer;
+	transition: background-color 0.25s, color 0.25s;
+}
+
+.coupon .buttonToepassen:hover,
+.inhoudWinkelWagen .buttonUpDate:hover {
+	color: #33A1FD;
+	background-color: #fff;
+}
+
+/* Product zoekresultaten */
+.productSorterenMain {
+	background-color: #DFE0E1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 48px 0 0 0;
+}
+
+.productSorterenMain .sortContainer select {
+	font-family: 'Noto Sans', Verdana, sans-serif;
+	padding: 4px 8px;
+	outline: none;
+}
+
+.productSorterenMain .sortContainer select:focus {
+	border: 1px solid #7678ED;
+}
+
+.productSorterenMain .productSorteren {
+	width: auto;
+	padding: 0 0 16px 0;
+	text-align: center;
+}
+
+.productSorterenMain .sidebar {
+	width: auto;
+}
+
+.resultatenText {
+	width: 250px;
+	text-align: right;
+	margin: 0 30px 0 100px;
+}
+
+.resultatenText p {
+	color: #989CA3;
+}
+
+/* Informatie */
+.informatieGebied {
+	background-color: #DFE0E1;
+	height: auto;
+	padding: 48px 0;
+}
+
+.informatieGebied .losInformatie {
+	background-color: #fff;
+	border: 3px solid #BFBDC1;
+	border-radius: 8px;
+	width: 600px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.informatieGebied .losInformatie .content {
+	position: relative;
+	padding: 0 16px 24px 16px;
+}
+
+.losInformatie .content .artikelList li {
+	margin: 2px 0;
+}
+
+.informatieGebied .losInformatie .content h2,
+.informatieGebied .losInformatie .content p {
+	margin: 16px 0 16px 0;
+}
+
+.informatieGebied .losInformatie .content h3 {
+	margin: 24px 0 0 0;
+}
+
+.informatieKader {
+	background-color: #F7F7F9;
+	border: 1px solid #BFBDC1;
+	border-radius: 8px;
+	width: auto;
+	padding: 16px;
+}
+
+.backToTop {
+	font-size: 1.8rem;
+	position: absolute;
+	right: 25px;
+}
+
+.backToTop a:link,
+.backToTop a:visited {
+	color: #33A1FD;
+}
+
+.backToTop a:hover {
+	color: #989CA3;
+}
