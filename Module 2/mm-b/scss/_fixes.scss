@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* FIXES */
+/* Buttons fix voor de Apple */
+input[type="submit"] {
+	cursor: pointer;
+	appearance: none;
+}
+
+/* Blauwe outline fix Video JS */
+*:focus {
+	background: none;
+	border: 0px;
+	outline: none;
+}
+
+/* Clearfix floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Fix floats 2 */
+.fix {
+	font-size: 0;
+}

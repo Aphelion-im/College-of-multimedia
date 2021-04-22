@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* Video JS */
+.video-js {
+	color: #ffffff;
+	
+	.vjs-big-play-button:hover {
+		background-color: $button-hover;
+	}
+}
+
+/* Change the border of the big play button. */
+.trailerSmall .vjs-big-play-button {
+  border-color: #ffffff;
+  margin-left: 42%;
+  margin-top: 28%;
+}
+
+.trailerMedium .vjs-big-play-button {
+  border-color: #ffffff;
+  margin-left: 44%;
+  margin-top: 37%;
+}
+
+.trailerLarge .vjs-big-play-button  {
+  border-color: #ffffff;
+  margin-left: 46%;
+  margin-top: 31%;
+}
+
+/* Change the color of various "bars". */
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #ffffff;
+}
+
+/* Trailers */
+.trailerSmall {
+	height: 360px;
+	left: 324px;
+	position: absolute;
+	top: 221.5px;
+	width: 640px;
+}
+
+.trailerMedium {
+	position: absolute;
+	width: 852px;
+	height: 480px;
+	top: 81px;
+	left: 214px;
+}
+
+.trailerLarge {
+	position: absolute;
+	width: 1280px;
+	height: 720px;
+	top: 0;
+	left: 0;
+}
+
+.trailerLarge[poster] {
+	z-index: -1;
+}

@@ -1,0 +1,3025 @@
+@charset "UTF-8";
+
+@import "setup"; //Variabelen, mixins, wrapper, container en algemene settings.
+@import "fixes"; //Compatibility fixes, ClearFix, etc.
+@import "achtergronden";
+@import "components"; //Knoppen, formulier elementen.
+@import "video-js"; //Video JS.
+@import "shame"; //Last minute updates.
+
+// In _setup.scss staan de variabelen, mixins, etc.
+// Meyer's reset in HTML pagina zelf
+
+/* Mobile first CSS */
+
+// Geneste Sass rule
+header {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  .container {
+    min-height: 80px;
+  }
+}
+
+/* Hamburger navigation mobile v2.0 (met animatie) */
+header #showMenu {
+  appearance: none;
+  background-image: url("../images/icons/icons.svg");
+  background-position: -19px -14px;
+  background-size: 1088px 488px;
+  cursor: pointer;
+  height: 32px;
+  outline: none;
+  position: absolute;
+  top: 1.26rem;
+  transition: all 250ms steps(7);
+  width: 32px;
+}
+
+header #showMenu:checked {
+  background-position: -357px -18px;
+}
+
+header #showMenu:checked+ul {
+  height: 26.25rem;
+}
+
+header nav {
+  overflow: hidden;
+}
+
+header nav ul {
+  appearance: none;
+  height: 0;
+  position: relative;
+  top: 5rem;
+  transition: height 500ms ease-in;
+}
+
+header nav ul li a {
+  border-bottom: 1px solid #808080;
+  color: $wit;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header nav ul li:first-of-type a:hover {
+  color: $wit;
+}
+
+header nav ul li:last-of-type a {
+  border-bottom: none;
+}
+
+header nav ul li a:hover {
+  background-color: $cuisine-blauw;
+}
+
+header .headerIcons {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  position: absolute;
+  right: 1.35rem;
+  top: 1.26rem;
+  width: 100px;
+}
+
+header .headerIcons li {
+  display: block;
+  height: 50px;
+  margin-left: 24px;
+}
+
+header .headerIcons li a {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: block;
+  font-size: 0;
+  height: 36px;
+  transition: transform 250ms ease-in;
+  width: 36px;
+}
+
+/* Header Logo */
+h1 {
+  background-image: url("../images/logo/cuisine-logo.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  font-size: 0;
+  transition: box-shadow 250ms ease-in;
+}
+
+header h1:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+header h1 {
+  display: none;
+  height: 120px;
+  left: 50%;
+  position: absolute;
+  top: 6.8rem;
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+.hero h1 {
+  display: block;
+  height: 120px;
+  left: 50%;
+  position: absolute;
+  top: 6.8rem;
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+.hero h1:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Section: Hero */
+.hero {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  min-height: 700px;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.hero article {
+  align-self: center;
+  color: $zwart;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.hero p:nth-of-type(1) {
+  color: $wit;
+  font-family: $merriweather-font;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero p:nth-of-type(1)::after {
+  border-bottom: 5px solid $cuisine-blauw;
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 0 auto;
+  transform: translateY(1.25rem);
+  width: 100%;
+}
+
+.hero p:nth-of-type(2) {
+  align-self: flex-end;
+  color: $wit;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero .navLeft a {
+  background-image: url("../images/icons/icons.svg");
+  background-position: -16px -171px;
+  background-size: 1088px 488px;
+  display: block;
+  font-size: 0;
+  height: 50px;
+  left: 1rem;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-85%);
+  transition: opacity 250ms ease-in;
+  width: 50px;
+}
+
+.hero .navLeft a:hover {
+  opacity: 1;
+}
+
+.hero .navRight a {
+  background-image: url("../images/icons/icons.svg");
+  background-position: -71px -172px;
+  background-size: 1088px 488px;
+  display: block;
+  font-size: 0;
+  height: 50px;
+  opacity: 0.5;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-85%);
+  transition: opacity 250ms ease-in;
+  width: 50px;
+}
+
+.hero .navRight a:hover {
+  opacity: 1;
+}
+
+.hero .knopOranje {
+  left: 0rem;
+  position: relative;
+  top: 7rem;
+  transition: all 250ms ease-in;
+}
+
+.hero .pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 8.5rem;
+}
+
+.hero .pagination li {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border: 3px solid $cuisine-blauw;
+  cursor: pointer;
+  font-size: 0;
+  height: 20px;
+  margin: 0 4px;
+  transition: all 250ms ease-in;
+  width: 20px;
+}
+
+.pagination li.currentSlide {
+  background-color: $cuisine-blauw;
+  border-radius: 50%;
+  border: 4.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 0px 3px $cuisine-blauw;
+}
+
+.hero .pagination li:hover {
+  background-color: $cuisine-oranje;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 0px 3px $cuisine-blauw;
+}
+
+/* Sectie: Nieuwste Boeken */
+.nieuwsteBoeken {
+  padding: 20px 0 0 0;
+}
+
+.nieuwsteBoeken .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nieuwsteBoeken .card {
+  display: inline-block;
+  height: 400px;
+  margin: 12px 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.nieuwsteBoeken a.card:link {
+  text-decoration: none;
+}
+
+.nieuwsteBoeken .card .knopOranje {
+  margin: 0 auto;
+  position: relative;
+  top: 11.5rem;
+}
+
+.nieuwsteBoeken .card p:nth-of-type(1) {
+  color: $wit;
+  font-family: $merriweather-font;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 32px;
+  position: relative;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  top: 8rem;
+}
+
+.nieuwsteBoeken .card p:nth-of-type(1)::after {
+  border-bottom: 5px solid $cuisine-blauw;
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 0 auto;
+  transform: translateY(1.25rem);
+  width: 80%;
+}
+
+.nieuwsteBoeken .card p:nth-of-type(2) {
+  align-self: flex-end;
+  color: $wit;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+  position: relative;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  top: 8.2rem;
+}
+
+/* Sectie: Laatste nieuws */
+.laatsteNieuws {
+  padding: 3px 0 0 0;
+}
+
+.laatsteNieuws .card {
+  align-items: flex-start;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.laatsteNieuws .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.laatsteNieuws a.card:link {
+  text-decoration: none;
+}
+
+.laatsteNieuws .card .knopOranje {
+  bottom: 3%;
+  left: 50%;
+  margin: 24px 0 16px 0;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+.laatsteNieuws .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  text-align: left;
+}
+
+.laatsteNieuws .card img {
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Sectie: Nieuwe recepten */
+.nieuweRecepten {
+  padding: 3px 0 0 0;
+}
+
+.nieuweRecepten .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nieuweRecepten .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 550px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.nieuweRecepten .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.laatsteNieuws a.card:link {
+  text-decoration: none;
+}
+
+.nieuweRecepten .card .knopOranje {
+  margin: 0 auto;
+  position: relative;
+  top: 1.5rem;
+}
+
+.nieuweRecepten .card h3 {
+  text-transform: uppercase;
+}
+
+.nieuweRecepten .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  text-align: left;
+}
+
+.nieuweRecepten .card img {
+  height: 325px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nieuweRecepten .card ul {
+  color: $zwart;
+  list-style-position: inside;
+  list-style-type: disc;
+  margin: 4px 0 8px 0;
+  text-align: left;
+}
+
+.nieuweRecepten .card ul li span {
+  left: -10px;
+  position: relative;
+}
+
+.nieuweRecepten ul:first-of-type {
+  list-style-type: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+}
+
+.nieuweRecepten ul:first-of-type li {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: inline-block;
+  font-size: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.nieuweRecepten ul+span {
+  color: $cuisine-blauw;
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  position: absolute;
+  right: 1.6rem;
+  top: 2.9rem;
+}
+
+/* Sectie: Over ons */
+.overCuisine {
+  padding: 15px 0 20px 0;
+}
+
+.overCuisine .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overCuisine img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.overCuisine h2+img {
+  display: none;
+}
+
+.overCuisine p {
+  line-height: 1.25;
+  margin: 16px 0 16px 0;
+}
+
+.overCuisine p:first-of-type {
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.overCuisine p:nth-of-type(1n + 2) {
+  text-align: right;
+}
+
+.overCuisine p:last-of-type {
+  color: $cuisine-blauw;
+  font-weight: 700;
+}
+
+.overCuisine article {
+  position: relative;
+}
+
+.overCuisine .knopOranje {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: $cuisine-blauw;
+  color: $wit;
+  padding: 24px 0 8px 0;
+}
+
+footer ::selection {
+  background-color: $cuisine-oranje;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer h1 {
+  background-image: url("../images/logo/cuisine-logo.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  font-size: 0;
+  height: 70px;
+  margin-bottom: 8px;
+  transition: box-shadow 250ms ease-in;
+  width: 70px;
+}
+
+footer h1:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+footer .menu {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+footer .menu a {
+  color: $wit;
+  text-decoration: none;
+}
+
+footer .menu a:hover {
+  text-decoration: underline;
+}
+
+footer .copyright {
+  color: $cuisine-blauw-1;
+  font-size: 0.8rem;
+  margin: 16px auto 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+footer .social {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 2;
+  position: relative;
+  text-align: right;
+  width: 70%;
+}
+
+footer .social>ul li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+footer .social>ul li:last-child {
+  margin-right: -6px;
+}
+
+footer .social>ul li a {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: inline-block;
+  font-size: 0;
+  height: 45px;
+  transition: transform 250ms ease-in;
+  width: 45px;
+}
+
+footer .social>ul li a:hover {
+  transform: scale(1.1);
+}
+
+footer address {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+/* Pagina: Campagne */
+.kokenNigella {
+  height: auto;
+  padding: 32px 0;
+}
+
+.kokenNigella .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.kokenNigella article {
+  height: auto;
+  order: 2;
+  position: relative;
+}
+
+.kokenNigella .video-js {
+  order: 1;
+  width: 100%;
+}
+
+.kokenNigella h2,
+.kokenNigella h3 {
+  margin: 16px 0;
+}
+
+.kokenNigella article p:first-of-type {
+  font-weight: 700;
+}
+
+.kokenNigella p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.kokenNigella article .knopOranje {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.kokenNigella ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.kokenNigella .knopOranje {
+  margin: 16px 0;
+}
+
+/* Pagina: Campagne. Sectie: Nigella's boeken */
+.nigellaBoeken .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nigellaBoeken {
+  display: none;
+}
+
+.nigellaBoeken .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 550px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 49%;
+}
+
+.nigellaBoeken .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.nigellaBoeken .card .knopOranje {
+  margin: 0 auto;
+  position: relative;
+  top: 1rem;
+}
+
+.nigellaBoeken .card h3 {
+  text-transform: uppercase;
+}
+
+.nigellaBoeken .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  text-align: left;
+}
+
+.nigellaBoeken .card img {
+  height: 305px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Pagina: Campagne. Sectie: Nigella's recepten */
+.nigellaRecepten {
+  padding: 16px 0;
+}
+
+.nigellaRecepten .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nigellaRecepten .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 550px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.nigellaRecepten .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.nigellaRecepten .card .knopOranje {
+  margin: 0 auto;
+  position: relative;
+  top: 1.5rem;
+}
+
+.nigellaRecepten .card h3 {
+  text-transform: uppercase;
+}
+
+.nigellaRecepten .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  text-align: left;
+}
+
+.nigellaRecepten .card img {
+  height: 325px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nigellaRecepten .card ul {
+  color: $zwart;
+  list-style-position: inside;
+  list-style-type: disc;
+  margin: 4px 0 8px 0;
+  text-align: left;
+}
+
+.nigellaRecepten .card ul li span {
+  position: relative;
+  left: -10px;
+}
+
+.nigellaRecepten ul:first-of-type {
+  list-style-type: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+}
+
+.nigellaRecepten ul:first-of-type li {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: inline-block;
+  font-size: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.nigellaRecepten ul+span {
+  color: $cuisine-blauw;
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  position: absolute;
+  right: 1.6rem;
+  top: 2.9rem;
+}
+
+/* Pagina: Campagne. Sectie: Over Nigella */
+.overNigella {
+  padding: 8px 0 32px 0;
+}
+
+.overNigella .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.overNigella h3 {
+  margin: 16px 0 8px 0;
+}
+
+.overNigella img {
+  margin: 16px 0 0 0;
+}
+
+.overNigella ul {
+  line-height: 1.35;
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+.overNigella p {
+  margin: 16px 0;
+  line-height: 1.5;
+}
+
+/* Pagina: Contact. Sectie: Formulier */
+.contact {
+  padding: 128px 0 48px 0;
+  position: relative;
+}
+
+.contact .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact .contactFormulier {
+  align-self: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+.contact form input[type="text"],
+.contact form input[type="email"],
+.contact form textarea {
+  border: 1px solid $cuisine-blauw-1;
+  font-family: $raleway-font;
+  margin: 8px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.contact form label {
+  color: $cuisine-blauw-1;
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border: 1px solid $cuisine-blauw;
+}
+
+.contact form .knopOranje[type="submit"] {
+  border: none;
+}
+
+.contactFormulier .knopOranje,
+.contactFormulier .knopGrijs {
+  bottom: 0;
+  display: block;
+  left: 50%;
+  margin-top: 16px;
+  position: relative;
+  transform: translateX(-50%);
+  width: 275px;
+}
+
+/* Contactformulier validatie */
+#contactFormulier label {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+}
+
+.contact form div {
+  position: relative;
+}
+
+.contact form div>span { 
+  color: red;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  position: absolute;
+  top: 54px;
+  right: 0;
+}
+
+.contact #contactFormulier div:nth-of-type(3)>span {
+  position: absolute;
+  top: 82px;
+  right: 0;
+}
+
+.contact span.fa {
+  padding: 0 0.5rem 0 0;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.contact span.fa.fa-exclamation-circle {
+  color: red;
+}
+
+.contact span.fa.fa-check-circle {
+  color: green;
+}
+
+/* Registreer pagina */
+.registreerMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 128px 0 48px 0;
+  position: relative;
+  width: 90%;
+}
+
+.registreerMain img {
+  display: none;
+  width: 50%;
+}
+
+.registreer .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.registreer .registratieFormulier {
+  align-self: center;
+  max-width: 700px;
+  width: 100%;
+}
+
+.registreer form input[type="text"],
+.registreer form input[type="email"],
+.registreer form input[type="date"],
+.registreer form textarea {
+  border: 1px solid $cuisine-blauw-1;
+  font-family: $raleway-font;
+  margin: 8px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.registreer form input[type="number"] {
+  border: 1px solid $cuisine-blauw-1;
+  font-family: $raleway-font;
+  margin: 8px 0;
+  padding: 16px;
+  width: 15%;
+}
+
+.registreer form label {
+  color: $cuisine-blauw-1;
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.registreer form input:focus,
+.registreer form textarea:focus {
+  border: 1px solid $cuisine-blauw;
+}
+
+.registreer form .knopOranje[type="submit"] {
+  border: none;
+}
+
+.registreer .registratieFormulier .knopOranje,
+.registreer .registratieFormulier .knopGrijs {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin-top: 16px;
+  position: relative;
+  width: 100%;
+}
+
+/* Registratieformulier validatie */
+#registratieFormulier label {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+}
+
+.registreer form div {
+  position: relative;
+}
+
+.registreer form div>span {
+  color: red;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  position: absolute;
+  top: 54px;
+  right: 0;
+}
+
+// Voor het Aantal personen veld
+.registreer form div:nth-of-type(4)>span {
+  color: red;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  position: absolute;
+  top: 20px;
+  left: 245px;
+}
+
+.registreer span.fa {
+  padding: 0 0.5rem 0 0;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.registreer span.fa.fa-exclamation-circle {
+  color: red;
+}
+
+.registreer span.fa.fa-check-circle {
+  color: green;
+}
+
+/* Pagina: Over ons */
+.overOns {
+  padding: 20px 0;
+}
+
+.overOns .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.overOns article:first-of-type p:first-of-type {
+  font-weight: 700;
+}
+
+.overOns h2 {
+  margin: 8px 0;
+}
+
+.overOns h3 {
+  margin: 4px 0;
+}
+
+.overOns p {
+  margin-bottom: 8px;
+}
+
+.overOns img {
+  margin: 8px 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.overOns ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+/* Pagina: Recepten. Sectie: receptenFilter */
+.receptenFilter {
+  padding: 128px 0 16px 0;
+}
+
+.receptenFilter h2~span {
+  height: 20px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.receptenFilter .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.receptenFilter #menu {
+  flex: 1;
+  margin: 16px 0;
+}
+
+.receptenFilter #menu2 {
+  flex: 1;
+  margin: 16px 0;
+}
+
+.receptenFilter #menu span {
+  color: $cuisine-blauw;
+  font-weight: 700;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.receptenFilter #menu2 span {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: inline-block;
+  height: 30px;
+  margin-left: 8px;
+  width: 30px;
+}
+
+.receptenFilter .rangeSlider {
+  position: relative;
+}
+
+.receptenFilter .rangeSlider .aantalPersonen {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: block;
+  height: 42px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transform: translateX(-50%);
+  width: 42px;
+}
+
+.receptenFilter .rangeSlider {
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+
+.receptenFilter .rangeSlider span {
+  margin-left: 8px;
+}
+
+#rangeSlider {
+  left: 17px;
+  position: absolute;
+  top: 27px;
+  vertical-align: middle;
+  width: 85%;
+}
+
+#sliderCounterLeft {
+  left: 0;
+  position: absolute;
+  top: 40px;
+}
+
+#sliderCounterRight {
+  left: 91.5%;
+  position: absolute;
+  top: 40px;
+}
+
+
+/* Pagina: Recepten. Sectie: receptenMain */
+.receptenMain {
+  padding: 3px 0 0 0;
+}
+
+.receptenMain .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.receptenMain .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 550px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.receptenMain .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.receptenMain .card .knopOranje {
+  margin: 0 auto;
+  position: relative;
+  top: 1.5rem;
+}
+
+.receptenMain .card h3 {
+  text-transform: uppercase;
+}
+
+.receptenMain .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  text-align: left;
+}
+
+.receptenMain .card img {
+  height: 325px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+.receptenMain .card ul {
+  color: $zwart;
+  list-style-position: inside;
+  list-style-type: disc;
+  margin: 4px 0 8px 0;
+  text-align: left;
+}
+
+.receptenMain .card ul li span {
+  position: relative;
+  left: -10px;
+}
+
+.receptenMain ul:first-of-type {
+  list-style-type: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+}
+
+.receptenMain ul:first-of-type li {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: inline-block;
+  font-size: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.receptenMain ul+span {
+  color: $cuisine-blauw;
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  position: absolute;
+  right: 1.6rem;
+  top: 2.9rem;
+}
+
+/* Pagina: Recepten. Recept. */
+.recept .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 48px 0;
+}
+
+.recept aside {
+  flex: auto;
+  margin: 8px 0;
+}
+
+.recept ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+.recept ul li {
+  margin: 4px 0;
+}
+
+.recept article {
+  flex: auto;
+  margin: 8px 0;
+}
+
+.recept h3 {
+  margin: 16px 0 8px 0;
+}
+
+.recept article p {
+  margin-top: 16px;
+}
+
+.recept #naamAuteur {
+  color: $cuisine-blauw;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+
+/* Pagina: Shop */
+.nieuwsteBoekenShop {
+  padding: 128px 0 16px 0;
+}
+
+.nieuwsteBoekenShop .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menuOnZichtbaar {
+  display: none;
+}
+
+/* Pagina: Nieuws */
+.nieuws {
+  padding: 128px 0 48px 0;
+}
+
+.nieuws .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nieuws .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 550px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.nieuws .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.nieuws a.card:link {
+  text-decoration: none;
+}
+
+.nieuws .card .knopOranje {
+  margin: 0 auto;
+  position: relative;
+  top: 1.5rem;
+}
+
+.nieuws .card p {
+  color: $zwart;
+  font-size: 1rem;
+  height: 70px;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.nieuws .card img {
+  height: 325px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Welk deel van de koe? */
+.koeDeel {
+  padding: 48px 0;
+}
+
+.koeDeel .container {
+  border-radius: 16px;
+  border: 2px solid $cuisine-blauw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+  min-height: 400px;
+  padding: 48px;
+}
+
+.koeDeel h2 {
+  text-align: center;
+  width: 100%;
+}
+
+#koeDelen {
+  max-width: 480px;
+  min-height: 400px;
+  width: 100%;
+}
+
+.koeDeel .textBox {
+  min-height: 400px;
+  text-align: center;
+  transform: translateY(40px);
+  width: 100%;
+}
+
+.koeDeel .textBox h3 {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+#koeThumbnail {
+  border-radius: 50%;
+  border: 2px solid $cuisine-blauw;
+  height: 110px;
+  width: 110px;
+}
+
+#koeIntro {
+  color: $cuisine-oranje;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+/* Koe SVG */
+#koeDelen {
+  cursor: pointer;
+}
+
+#omtrek {
+  fill: $zwart;
+}
+
+#biefstuk {
+  fill: $cuisine-blauw;
+}
+
+#tbone {
+  fill: $cuisine-blauw;
+}
+
+#sukade {
+  fill: $cuisine-blauw;
+}
+
+#ossenhaas {
+  fill: $cuisine-blauw;
+}
+
+.st0 {
+  fill: $wit;
+}
+
+/* .st1{fill:$cuisine-blauw;} */
+
+.st2 {
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st3 {
+  fill: none;
+  stroke-dasharray: 4.0786, 2.0393;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st4 {
+  fill: none;
+  stroke-dasharray: 3.9763, 1.9882;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st5 {
+  fill: none;
+  stroke-dasharray: 4.187, 2.0935;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st6 {
+  fill: none;
+  stroke-dasharray: 4.3767, 2.1883;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st7 {
+  fill: none;
+  stroke-dasharray: 3.904, 1.952;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st8 {
+  fill: none;
+  stroke-dasharray: 3.8458, 1.9229;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st9 {
+  fill: none;
+  stroke-dasharray: 4.0408, 2.0204;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+.st10 {
+  fill: none;
+  stroke-dasharray: 4.0616, 2.0308;
+  stroke-miterlimit: 10;
+  stroke: $zwart;
+}
+
+/* Pagina: Shop */
+/* Pagina: Shop - Nieuwste boeken */
+.nieuwsteBoekenShop {
+  padding: 128px 0 32px 0;
+}
+
+.nieuwsteBoekenShop .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nieuwsteBoekenShop h2 {
+  display: block;
+  width: 100%;
+}
+
+.nieuwsteBoekenShop .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 575px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.nieuwsteBoekenShop .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.nieuwsteBoekenShop .card .knopOranje {
+  border-radius: 0;
+  margin-top: -3px;
+  width: 100%;
+}
+
+.nieuwsteBoekenShop .card h3 {
+  text-transform: capitalize;
+}
+
+.nieuwsteBoekenShop .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 8px 0 16px 0;
+  text-align: left;
+}
+
+.nieuwsteBoekenShop .card img {
+  height: 325px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nieuwsteBoekenShop .prijsBoek {
+  color: $cuisine-blauw;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 16px;
+  text-align: right;
+}
+
+/* Pagina: shop - Alle boeken. Boeken main */
+.mainBoekenFilter {
+  border-top: 1px solid $cuisine-blauw;
+  padding: 32px 0 48px 0;
+}
+
+.mainBoekenFilter .boekenMain {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.mainBoekenFilter .boekenMain .card {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 600px;
+  margin: 12px 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 250ms ease-in;
+  width: 100%;
+}
+
+.mainBoekenFilter .boekenMain .card:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.mainBoekenFilter .boekenMain .card .knopOranje {
+  border-radius: 0;
+  margin-top: -16px;
+  width: 100%;
+}
+
+.mainBoekenFilter .boekenMain .card h3 {
+  text-transform: capitalize;
+}
+
+.mainBoekenFilter .boekenMain .card p {
+  color: $zwart;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 24px 0 8px 0;
+  text-align: left;
+}
+
+.mainBoekenFilter .boekenMain .card p:first-of-type {
+  height: 43px;
+  overflow: hidden;
+}
+
+
+.mainBoekenFilter .boekenMain .card p:last-of-type {
+  height: 65px;
+  overflow: hidden;
+}
+
+.mainBoekenFilter .boekenMain .card h3~p:first-of-type {
+  font-weight: 700;
+  margin: 8px 0;
+  text-align: left;
+}
+
+.mainBoekenFilter .boekenMain .card h3~p:first-of-type:before {
+  content: '"';
+}
+
+.boekenMain .card h3~p:first-of-type:after {
+  content: '"';
+}
+
+.mainBoekenFilter .boekenMain .card img {
+  height: 325px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mainBoekenFilter .boekenMain .prijsBoek {
+  color: $cuisine-blauw;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Pagina: Shop - Filter boeken. */
+.mainBoekenFilter .boekenFilter {
+  width: 100%;
+}
+
+.mainBoekenFilter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+.mainBoekenFilter .boekenFilter .uitklapMenuContainer {
+  border-bottom: 1px solid $cuisine-blauw;
+  border-top: 1px solid $cuisine-blauw;
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.mainBoekenFilter .filterTop {
+  border-bottom: 1px solid $cuisine-blauw;
+}
+
+.mainBoekenFilter .filterBottom {
+  border-top: 1px solid $cuisine-blauw;
+}
+
+.mainBoekenFilter .boekenFilter h2 {
+  padding-bottom: 16px;
+}
+
+.mainBoekenFilter .boekenFilter h2~span {
+  height: 1.2rem;
+  width: 100%;
+}
+
+.mainBoekenFilter .boekenFilter .checkbox {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+}
+
+.mainBoekenFilter .boekenFilter .checkbox>span {
+  color: #34495e;
+  padding: 0.5rem 0.25rem;
+}
+
+.mainBoekenFilter .boekenFilter .checkbox>input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $wit;
+  border-radius: 50%;
+  border: 1px solid $cuisine-blauw;
+  cursor: pointer;
+  height: 25px;
+  outline: none;
+  transition-duration: 0.3s;
+  width: 25px;
+}
+
+.mainBoekenFilter .boekenFilter .checkbox>input:checked {
+  border: 7px solid $cuisine-blauw;
+}
+
+/* Pagina: shop. Sectie: boekenfilter. */
+.mainBoekenFilter .boekenFilter h3.uitklapMenuContainer>i {
+  content: " \f077";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.mainBoekenFilter .boekenFilter .uitklapMenuContainer h3 {
+  cursor: pointer;
+}
+
+.mainBoekenFilter .boekenFilter .menuInhoud {
+  flex: 1;
+  margin: 16px 0;
+  transition: all 250ms ease-in;
+  width: 200px;
+}
+
+.mainBoekenFilter .boekenFilter .uitklapMenuContainer ul li {
+  text-align: left;
+}
+
+.mainBoekenFilter .boekenFilter .menuInhoud span {
+  color: $cuisine-blauw;
+  font-weight: 700;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.mainBoekenFilter .boekenFilter .rangeSliderPrijs {
+  display: inline-block;
+  height: 43px;
+  margin: 16px 0 24px 0;
+  padding-left: 48px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.mainBoekenFilter #rangeSliderPrijs {
+  width: 75%;
+}
+
+.mainBoekenFilter #sliderCounterPrijsLeft {
+  background-image: url("../images/icons/icons.svg");
+  background-size: 1088px 488px;
+  display: block;
+  height: 42px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 42px;
+}
+
+.mainBoekenFilter #sliderCounterPrijsRight {
+  color: $cuisine-blauw;
+  font-size: 1.1rem;
+  left: 80%;
+  position: absolute;
+  top: 16px;
+  width: 100px;
+}
+
+/* Pagina: Mijn account */
+.mainMijnAccount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 128px 0 48px 0;
+  position: relative;
+  width: 90%;
+}
+
+.menuLinksMijnAccount {
+  width: 100%;
+}
+
+.mijnAccount {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 48px;
+  position: relative;
+  width: 100%;
+}
+
+.mijnAccount h3 {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.mijnAccount .mijnAccountFormulier {
+  align-self: flex-start;
+  width: 100%;
+}
+
+.mijnAccount form input[type="text"],
+.mijnAccount form input[type="email"],
+.mijnAccount form textarea {
+  border: 1px solid $cuisine-blauw-1;
+  font-family: $raleway-font;
+  margin: 8px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.mijnAccount form label {
+  color: $cuisine-blauw-1;
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.mijnAccount form input:focus,
+.mijnAccount form textarea:focus {
+  border: 1px solid $cuisine-blauw;
+}
+
+.mijnAccount form .knopOranje[type="submit"] {
+  border: none;
+  width: 100%;
+}
+
+.mijnAccountFormulier .knopOranje,
+.mijnAccountFormulier .knopGrijs {
+  bottom: 0;
+  display: block;
+  left: 50%;
+  margin-top: 16px;
+  position: relative;
+  transform: translateX(-50%);
+  width: 275px;
+}
+
+.menuLinksMijnAccount {
+  margin-right: 4%;
+}
+
+.menuLinksMijnAccount ul li {
+  line-height: 4rem;
+}
+
+.menuLinksMijnAccount ul li:first-of-type {
+  border-bottom: 1px solid $cuisine-blauw;
+  border-top: 1px solid $cuisine-blauw;
+}
+
+.menuLinksMijnAccount ul li:last-of-type {
+  border-bottom: 1px solid $cuisine-blauw;
+  border-top: 1px solid $cuisine-blauw;
+}
+
+.menuLinksMijnAccount ul li:nth-of-type(2) {
+  border-bottom: 1px solid $cuisine-blauw;
+}
+
+.menuLinksMijnAccount h2 {
+  margin-bottom: 24px;
+}
+
+.menuLinksMijnAccount ul {
+  text-transform: uppercase;
+}
+
+.menuLinksMijnAccount ul li {
+  color: $cuisine-blauw;
+  text-decoration: none;
+}
+
+.menuLinksMijnAccount ul li {
+  color: $cuisine-blauw;
+}
+
+.menuLinksMijnAccount ul li:hover {
+  background-color: $cuisine-blauw;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menuLinksMijnAccount ul li:hover {
+  color: $wit;
+}
+
+.mijnAccount input[type="date"] {
+  border: 1px solid $cuisine-blauw-1;
+  font-family: $raleway-font;
+  margin: 8px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.mijnAccount input[type="tel"] {
+  border: 1px solid $cuisine-blauw-1;
+  font-family: $raleway-font;
+  margin: 8px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.mijnAccount h2 {
+  margin-top: 16px;
+}
+
+.mijnAccount .tab2,
+.mijnAccount .tab3,
+.mijnAccount .tab4 {
+  height: 100vh;
+}
+
+/* Mijn account formulier validatie */
+#mijnAccountFormulier label {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+}
+
+.mijnAccount form div {
+  position: relative;
+}
+
+.mijnAccount form div>span { 
+  color: red;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  position: absolute;
+  top: 54px;
+  right: 0px;
+}
+
+/* Telefoonnummer span */
+.mijnAccount form div:nth-of-type(11)>span { 
+position: absolute;
+top: 54px;
+left: 282px;
+}
+
+.mijnAccount form div:nth-of-type(12)>span { 
+  position: absolute;
+  top: 54px;
+  left: 282px;
+  }
+
+.mijnAccount span.fa {
+  padding: 0 0.5rem 0 0;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.mijnAccount span.fa.fa-exclamation-circle {
+  color: red;
+}
+
+.mijnAccount span.fa.fa-check-circle {
+  color: green;
+}
+
+/* Pagina: Winkelwagen */
+.winkelWagen {
+  padding: 128px 0 0 0;
+}
+
+.winkelWagen h2 {
+  border-bottom: 1px solid $cuisine-blauw;
+  padding-bottom: 24px;
+}
+
+.winkelWagen .product {
+  border-bottom: 1px solid $cuisine-blauw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  position: relative;
+  width: 100%;
+}
+
+.winkelWagen .product img {
+  height: 236px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  object-fit: cover;
+  width: 50%;
+}
+
+.winkelWagen .product .textBlock {
+  display: flex;
+  flex-direction: column;
+  height: 236px;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 40%;
+}
+
+.winkelWagen .product .textBlock p:nth-of-type(2) {
+  display: none;
+}
+
+.winkelWagen .product .priceBlock {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: right;
+  width: 100%;
+}
+
+.winkelWagen .product .priceBlock .prijs {
+  color: $cuisine-blauw;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.winkelWagen .product .priceBlock span {
+  color: rgb(71, 71, 71);
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.winkelWagen .product .priceBlock span:hover {
+  color: rgb(133, 133, 133);
+  font-size: 1.5rem;
+}
+
+.winkelWagen .product .priceBlock #aantal {
+  width: 30%;
+  height: 25px;
+}
+
+.winkelWagen .product .priceBlock #aantal:focus {
+  outline: 1px solid $cuisine-blauw;
+}
+
+.afrekenen {
+  padding: 16px 0 16px 0;
+  text-align: right;
+}
+
+.afrekenen p {
+  display: inline-block;
+  margin: 4px 0;
+  white-space: pre-line;
+  width: 200px;
+}
+
+.afrekenen p~div {
+  display: inline-block;
+  font-weight: 700;
+  width: 75px;
+}
+
+.afrekenenTotaal {
+  padding: 0 0 16px 0;
+  text-align: right;
+}
+
+.afrekenenTotaal .container {
+  border-top: 1px solid $cuisine-blauw;
+}
+
+.afrekenenTotaal p {
+  display: inline-block;
+  padding: 16px;
+  white-space: pre-line;
+  width: 200px;
+}
+
+.afrekenenTotaal p~div {
+  display: inline-block;
+  font-weight: 700;
+  width: 75px;
+}
+
+.afrekenenTotaal .knopOranje {
+  cursor: pointer;
+  user-select: none;
+  width: 250px;
+}
+
+/* MEDIA QUERIES */
+/* Mobilefirst! */
+@media screen and (min-width: 768px) {
+  // body {
+  //   background-color: silver;
+  // }
+
+  header h1 {
+    display: block;
+    top: 1.8rem;
+  }
+
+  .hero h1 {
+    display: none;
+  }
+
+  .hero p:nth-of-type(1) {
+    color: rgb(255, 255, 255);
+    font-family: $merriweather-font;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 32px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero .navLeft a,
+  .hero .navRight a {
+    transform: translateY(-60%);
+  }
+
+  .nieuwsteBoeken .card p:nth-of-type(1)::after {
+    max-width: 275px;
+  }
+
+  .nieuwsteBoeken .card p:nth-of-type(1) {
+    font-size: 1.5rem;
+  }
+
+  .nieuwsteBoeken .card p:nth-of-type(2) {
+    font-size: 1.75rem;
+  }
+
+  .sweet {
+    background-size: cover;
+  }
+
+  .jamie {
+    background-position: 50% 0%;
+  }
+
+  .laatsteNieuws .card img {
+    height: auto;
+  }
+
+  .laatsteNieuws .card .knopOranje {
+    bottom: 10%;
+    position: absolute;
+  }
+
+  .laatsteNieuws .card:nth-of-type(2) {
+    display: none;
+  }
+
+  .nieuweRecepten .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nieuweRecepten .card {
+    width: 49%;
+  }
+
+  .nieuweRecepten .card:nth-of-type(3) {
+    display: none;
+  }
+
+  .recept aside {
+    flex: 2;
+    order: 2;
+  }
+
+  .recept article {
+    flex: 4;
+    margin-right: 24px;
+    order: 1;
+  }
+
+  .overCuisine article {
+    position: relative;
+    text-align: left;
+    width: 100%;
+  }
+
+  .overCuisine p:nth-of-type(1n + 2) {
+    text-align: left;
+  }
+
+  .overCuisine img {
+    float: left;
+    height: 500px;
+    margin-right: 16px;
+    width: 50%;
+  }
+
+  .overCuisine .knopOranje {
+    bottom: 0;
+    position: absolute;
+    width: initial;
+  }
+
+  footer .copyright {
+    margin: 0 auto;
+    transform: translateY(-18px);
+  }
+
+  .nieuws .container {
+    flex-direction: row;
+  }
+
+  .nieuws .card {
+    width: 49%;
+  }
+
+  .nieuws .card .knopOranje {
+    top: 0.8rem;
+  }
+
+  .kokenNigella .video-js {
+    order: 2;
+    width: 49%;
+  }
+
+  .kokenNigella article {
+    order: 1;
+    width: 49%;
+  }
+
+  .kokenNigella article ul {
+    line-height: 1.35;
+  }
+
+  .kokenNigella article .knopOranje {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    width: 250px;
+  }
+
+  .nigellaRecepten .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nigellaRecepten .container .card {
+    width: 49%;
+  }
+
+  .overNigella ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 1.35;
+  }
+
+  .overNigella li {
+    width: 49%;
+  }
+
+  .overNigella img {
+    float: left;
+    margin-right: 16px;
+    width: 50%;
+  }
+
+  .receptenFilter ul li {
+    display: inline-block;
+  }
+
+  .receptenMain .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .receptenMain .card {
+    width: 49%;
+  }
+
+  .overOns img {
+    float: left;
+    margin-right: 16px;
+    width: 48%;
+  }
+
+  .overOns ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .overOns ul li {
+    width: 49%;
+  }
+
+  .overOns article:first-of-type {
+    margin-bottom: 8px;
+  }
+
+  .overOns article:nth-of-type(2) p:first-of-type {
+    margin-top: 8px;
+  }
+
+  .nieuwsteBoekenShop .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .nieuwsteBoekenShop .card {
+    height: 610px;
+    width: 49%;
+  }
+
+  #sliderCounterRight {
+    left: 89%;
+  }
+
+  .nieuwsteBoekenShop a:nth-last-of-type(1) {
+    display: none;
+  }
+
+  .mainBoekenFilter .boekenFilter .uitklapMenuContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mainBoekenFilter .boekenFilter .filterTop,
+  .mainBoekenFilter .boekenFilter .filterBottom {
+    border: none;
+    width: 33%;
+  }
+
+  .mainBoekenFilter .boekenFilter .rangeSliderPrijs {
+    width: 33%;
+  }
+
+  .mainBoekenFilter #rangeSliderPrijs {
+    width: 75%;
+  }
+
+  .mainBoekenFilter .boekenMain {
+    flex-direction: row;
+  }
+
+  .mainBoekenFilter .boekenMain .card {
+    width: 49%;
+  }
+
+  .menuLinksMijnAccount {
+    border-bottom: 1px solid $cuisine-blauw;
+  }
+
+  .menuLinksMijnAccount ul li:first-of-type {
+    border-bottom: none;
+    border-top: none;
+  }
+
+  .menuLinksMijnAccount ul li:last-of-type {
+    border-bottom: none;
+    border-top: none;
+  }
+
+  .menuLinksMijnAccount ul li:nth-of-type(2) {
+    border-bottom: none;
+  }
+
+  .menuLinksMijnAccount ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menuLinksMijnAccount ul li {
+    padding: 0 16px;
+  }
+
+  .menuLinksMijnAccount h2 {
+    border-bottom: 1px solid $cuisine-blauw;
+    margin-bottom: 0px;
+    padding-bottom: 24px;
+  }
+
+  .mijnAccountFormulier {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .aanhefWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .voorNaamWrapper {
+    width: 34%;
+  }
+
+  .tussenvoegselWrapper {
+    width: 19%;
+  }
+
+  .achternaamWrapper {
+    width: 44%;
+  }
+
+  .bedrijfsnaamWrapper {
+    width: 100%;
+  }
+
+  .bedrijfsnaamWrapper>label {
+    width: 100%;
+  }
+
+  .bedrijfsnaamWrapper #bedrijfsnaamnaam {
+    width: 34%;
+  }
+
+  .geboortedatumWrapper {
+    width: 100%;
+  }
+
+  .geboortedatumWrapper>label {
+    width: 100%;
+  }
+
+  .geboortedatumWrapper #geboortedatum {
+    width: 34%;
+  }
+
+  .straatWrapper {
+    width: 34%;
+  }
+
+  .straatWrapper>label {
+    width: 100%;
+  }
+
+  .straatWrapper #straat {
+    width: 100%;
+  }
+
+  .huisnummerWrapper {
+    width: 19%;
+  }
+
+  .huisnummerWrapper>label {
+    width: 100%;
+  }
+
+  .huisnummerWrapper #huisnummer {
+    width: 100%;
+  }
+
+  .postcodeWrapper {
+    width: 44%;
+  }
+
+  .postcodeWrapper>label {
+    width: 100%;
+  }
+
+  .postcodeWrapper #postcode {
+    width: 100%;
+  }
+
+  .landWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .telefoonWrapper {
+    width: 100%;
+  }
+
+  .telefoonWrapper>label {
+    width: 100%;
+  }
+
+  .telefoonWrapper #telefoon {
+    width: 34%;
+  }
+
+  .emailWrapper {
+    width: 100%;
+  }
+
+  .emailWrapper>label {
+    width: 100%;
+  }
+
+  .emailWrapper #email {
+    width: 34%;
+  }
+
+  .mijnAccount .mijnAccountFormulier #submit {
+    width: 300px;
+  }
+
+  .registreer .registratieFormulier .knopOranje,
+  .registreer .registratieFormulier .knopGrijs {
+    display: block;
+    left: 0;
+    margin-top: 16px;
+    width: 275px;
+  }
+
+  .winkelWagen .product {
+    justify-content: space-between;
+  }
+
+  .winkelWagen .product .textBlock p:nth-of-type(2) {
+    display: block;
+  }
+
+  .winkelWagen .product img {
+    width: 29%;
+  }
+
+  .winkelWagen .product .textBlock {
+    height: 236px;
+    justify-content: space-around;
+    margin-right: 16px;
+    width: 46%;
+  }
+
+  .winkelWagen .product .priceBlock {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    height: 236px;
+    justify-content: space-around;
+    text-align: right;
+    width: 20%;
+  }
+
+  .mijnAccountFormulier .landWrapper {
+    justify-content: space-between;
+  }
+
+  .mijnAccountFormulier #landanders {
+    width: 64.5%;
+  }
+
+
+}
+
+@media screen and (min-width: 992px) {
+  // body {
+  //   background-color: yellow;
+  // }
+
+  .nieuwsteBoeken .container {
+    justify-content: space-between;
+  }
+
+  .nieuwsteBoeken .card {
+    width: 32.5%;
+  }
+
+  .nieuwsteBoeken .card p:nth-of-type(1) {
+    font-size: 1.1rem;
+  }
+
+  .nieuwsteBoeken .card p:nth-of-type(2) {
+    font-size: 1.2rem;
+  }
+
+  .laatsteNieuws .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .laatsteNieuws .card {
+    width: 49%;
+  }
+
+  .laatsteNieuws .card:nth-of-type(2) {
+    display: inline-block;
+  }
+
+  .laatsteNieuws .card img {
+    min-height: 300px;
+  }
+
+  .nieuweRecepten .card {
+    width: 33%;
+  }
+
+  .nieuweRecepten .card:nth-of-type(3) {
+    display: block;
+  }
+
+  .overCuisine .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .overCuisine h2 {
+    margin-bottom: 16px;
+  }
+
+  .overCuisine h2+img {
+    display: block;
+    height: 500px;
+    margin: 0;
+    width: 50%;
+  }
+
+  .overCuisine article {
+    height: 500px;
+    overflow: hidden;
+    padding: 0 16px 0 16px;
+    text-align: left;
+    width: 50%;
+  }
+
+  .overCuisine article img {
+    display: none;
+  }
+
+  .overCuisine p:first-of-type {
+    margin-top: 0;
+  }
+
+  .overCuisine p:nth-of-type(n + 1) {
+    text-align: left;
+  }
+
+  .overCuisine .knopOranje {
+    bottom: 0;
+    left: 16px;
+    position: absolute;
+  }
+
+  .nigellaBoeken {
+    display: block;
+  }
+
+  .contactFormulier .knopOranje,
+  .contactFormulier .knopGrijs {
+    transform: translate(75px, -48px);
+  }
+
+  .nieuws .card .knopOranje {
+    top: 1.5rem;
+  }
+
+  .koeDeel .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .koeDeel #koeDelen {
+    width: 149%;
+  }
+
+  .koeDeel .textBox {
+    width: 49%;
+  }
+
+  .nieuwsteBoekenShop .card {
+    width: 49%;
+    height: 575px;
+  }
+
+  #sliderCounterRight {
+    left: 88%;
+  }
+
+  .mainBoekenFilter .boekenMain .card {
+    width: 32%;
+    height: 615px;
+  }
+
+
+}
+
+@media screen and (min-width: 1200px) {
+  // body {
+  //   background-color: pink;
+  // }
+
+  header #showMenuLabel,
+  header #showMenu {
+    display: none;
+  }
+
+  header .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header h1 {
+    top: 1.8rem;
+  }
+
+  header nav {
+    min-height: 80px;
+    font-size: 0;
+  }
+
+  header nav ul {
+    position: relative;
+    top: 0;
+  }
+
+  /* Als hamburger menu nog openstaat mobile/tablet en naar desktop gaat */
+  header #showMenu:checked+ul {
+    height: 0;
+  }
+
+  header nav ul li {
+    display: inline-block;
+    border-right: 2px ridge #404040;
+  }
+
+  header nav ul>li:first-child,
+  header nav ul>li:nth-child(7) {
+    display: none;
+  }
+
+  header nav ul li:nth-child(2) {
+    border-left: 3px groove #404040;
+  }
+
+  header nav ul li a {
+    border-bottom: 0;
+    display: block;
+    line-height: 80px;
+    padding: 0;
+    text-align: center;
+    transition: background-color 500ms;
+    width: 110px;
+  }
+
+  header nav ul li:hover {
+    background-color: $cuisine-blauw;
+  }
+
+  header nav ul li:nth-child(4) {
+    margin-right: 5.2rem;
+  }
+
+  header nav ul li:nth-child(5) {
+    border-left: 3px groove #404040;
+    margin-left: 5rem;
+  }
+
+  .laatsteNieuws .card img {
+    height: 320px;
+  }
+
+  .hero .knopOranje {
+    left: 30rem;
+    position: relative;
+    top: 3rem;
+  }
+
+  .nieuws .card {
+    width: 32%;
+  }
+
+  .nieuws .card .knopOranje {
+    top: 0.8rem;
+  }
+
+  .nigellaRecepten .container .card {
+    width: 32%;
+  }
+
+  .overNigella ul {
+    flex-direction: column;
+  }
+
+  .overNigella .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .overNigella article {
+    width: 49%;
+
+  }
+
+  .receptenFilter {
+    padding: 128px 0 48px 0;
+    width: 30%;
+  }
+
+  .receptenFilter .container {
+    flex-direction: column;
+  }
+
+  .receptenFilter ul li {
+    display: flex;
+  }
+
+  .receptenMain {
+    width: 70%;
+  }
+
+  .receptenMain {
+    padding: 160px 0 48px 0;
+  }
+
+  /* Voor receptenMain */
+  .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+  }
+
+  .overOns .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .overOns article {
+    width: 49%;
+  }
+
+  .overOns ul {
+    flex-direction: column;
+  }
+
+  .nieuwsteBoekenShop .card {
+    width: 32%;
+    height: 590px;
+  }
+
+  #sliderCounterRight {
+    left: 92%;
+  }
+
+  .nieuwsteBoekenShop a:nth-last-of-type(1) {
+    display: block;
+  }
+
+  .mainBoekenFilter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 48px;
+  }
+
+  .mainBoekenFilter .boekenMain {
+    padding: 0;
+    width: 68%;
+  }
+
+  .mainBoekenFilter .boekenFilter .rangeSliderPrijs {
+    width: 100%;
+  }
+
+  .mainBoekenFilter .boekenFilter {
+    width: 30%;
+    margin-right: 2%;
+  }
+
+  h3.uitklapMenu {
+    width: 150px;
+  }
+
+  .mainBoekenFilter .boekenFilter .filterTop {
+    border-bottom: 1px solid $cuisine-blauw;
+    width: 100%;
+  }
+
+  .mainBoekenFilter .boekenFilter .filterBottom {
+    border-top: 1px solid $cuisine-blauw;
+    width: 100%;
+  }
+
+  .mainBoekenFilter .boekenMain .card img {
+    height: 315px;
+  }
+
+  .mainBoekenFilter .boekenMain .card .knopOranje {
+    font-size: 0.8rem;
+  }
+
+  .mainBoekenFilter .boekenMain .prijsBoek {
+    margin-top: 32px;
+  }
+
+  .mainMijnAccount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menuLinksMijnAccount {
+    width: 24%;
+    height: 200px;
+  }
+
+  .mijnAccount {
+    width: 74%;
+  }
+
+  .menuLinksMijnAccount ul li:first-of-type {
+    border-top: 1px solid $cuisine-blauw;
+    border-bottom: 1px solid $cuisine-blauw;
+  }
+
+  .menuLinksMijnAccount ul li:last-of-type {
+    border-top: 1px solid $cuisine-blauw;
+    border-bottom: 1px solid $cuisine-blauw;
+  }
+
+  .menuLinksMijnAccount ul li:nth-of-type(2) {
+    border-bottom: 1px solid $cuisine-blauw;
+  }
+
+  .menuLinksMijnAccount h2 {
+    border: none;
+  }
+
+  .menuLinksMijnAccount ul {
+    display: block;
+  }
+
+  .menuLinksMijnAccount {
+    border-bottom: none;
+  }
+
+}

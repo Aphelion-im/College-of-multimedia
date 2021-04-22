@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+//Mixins
+@mixin background {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 720px;
+	min-width: 1280px;
+}
+
+@mixin border-color ($color) {
+	border: 1px solid $color;
+}

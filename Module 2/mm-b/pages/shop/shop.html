@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- SEO -->
+  <title>Shop - Cuisine. Kookboeken, recepten, en meer ...</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Shop. Cuisine. Kookboeken, recepten, en meer ...">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Meyer's reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <!-- Master stylesheet -->
+  <link href="../../css/mm-b-styles.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a title="Cuisine Home" href="../../index.html">
+        <h1>Cuisine. Kookboeken, recepten, en meer ...</h1>
+      </a>
+      <nav>
+        <label for="showMenu" id="showMenuLabel"></label>
+        <input type="checkbox" id="showMenu" role="button">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../pages/campagne.html">Campagne</a></li>
+          <li><a href="../../pages/recepten/recepten.html">Recepten</a></li>
+          <li><a href="../../pages/nieuws/nieuws.html">Nieuws</a></li>
+          <li><a href="../../pages/over-ons.html">Over Ons</a></li>
+          <li><a href="../../pages/contact.html">Contact</a></li>
+          <li><a href="../../pages/shop/winkelwagen.html">Winkelwagen</a></li>
+          <li class="active"><a href="../../pages/shop/shop.html">Shop</a></li>
+        </ul>
+      </nav>
+      <ul class="headerIcons">
+        <li><a class="mijnAccountIcon" title="Mijn account" href="mijn-account.html">Mijn Account</a></li>
+        <li><a class="winkelwagenIcon" title="Winkelwagen" href="winkelwagen.html">Winkelwagen</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="nieuwsteBoekenShop">
+    <div class="container">
+      <h2>Nieuwste boeken</h2>
+
+      <a href="#" class="card">
+        <h3>Simply nigella</h3>
+        <p>Simply Nigella bevat 125 inspirerende en toegankelijke recepten die moeiteloos in ons drukke leven passen,
+          boordevol ingrediënten
+          waar zowel je lichaam als je geest gelukkig van wordt.</p>
+        <img src="../../images/boeken/simply-nigella/simply-nigella-boek-o.jpg" alt="Boek Simply Nigella">
+        <div class="knopOranje">Bestel Simply nigella</div>
+        <div class="prijsBoek">&euro; 20,00</div>
+      </a>
+
+      <a href="#" class="card">
+        <h3>Sweet</h3>
+        <p>Volmaakt luchtig biscuitgebak, een met poedersuiker bestoven, superkruimelig koekje uit de oven. Weinig dat
+          zo'n geluksgevoel kan geven als deze
+          zoete verleidingen van Yotam Ottolenghi.</p>
+        <img src="../../images/boeken/sweet/yotam-ottolenghi-o.jpg" alt="Boek Sweet van Yotam Ottolenghi">
+        <div class="knopOranje">Bestel Sweet</div>
+        <div class="prijsBoek">&euro; 20,00</div>
+      </a>
+
+      <a href="#" class="card">
+        <h3>Jamie's superfood</h3>
+        <p>Gezond eten en je goed voelen wordt een koud kunstje, met deze recepten van Jamie Oliver voor een healthy en
+          happy leven. Het ultieme boek voor iedereen die
+          graag een gezonde leefstijl wil.</p>
+        <img src="../../images/boeken/jamies-superfood/jamies-super-food-o.jpg" alt="Boek Jamie's superfood">
+        <div class="knopOranje">Bestel Superfood</div>
+        <div class="prijsBoek">&euro; 20,00</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="mainBoekenFilter">
+    <section class="boekenFilter">
+      <h2>Alle boeken</h2>
+      <span>Resultaten: </span>
+      <div class="uitklapMenuContainer">
+
+        <div class="filterTop">
+          <h3 class="uitklapMenu">Categorie&euml;n<i class="navUp"></i></h3>
+          <ul class="menuInhoud">
+            <li><label class="checkbox">
+                <input type="checkbox" name='taal' value='vlees' id="vleesFilter">
+                <span>Vlees</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='taal' value='vis' id="visFilter">
+                <span>Vis</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='taal' value='vegetarisch' id="vegetarischFilter">
+                <span>Vegetarisch</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='taal' value='engelstalig' id="engelstaligFilter">
+                <span>Engelstalig</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='taal' value='nederlands' id="nederlandsFilter">
+                <span>Nederlands</span>
+              </label></li>
+          </ul>
+        </div>
+
+        <div class="rangeSliderPrijs">
+          <div title="Prijs" class="sliderPrijs"></div>
+          <input id="rangeSliderPrijs" type="range" title="Prijs" name="prijs" min="1" max="50" value="50">
+          <div class="euroTeken" id="sliderCounterPrijsLeft"></div>
+          <div id="sliderCounterPrijsRight">&euro; 50,-</div>
+        </div>
+
+        <div class="filterBottom">
+          <h3 class="uitklapMenu">Keukens<i class="navUp"></i></h3>
+          <ul class="menuInhoud">
+            <li> <label class="checkbox">
+                <input type="checkbox" name='keuken' value='aziatisch' id="aziatischFilter">
+                <span>Aziatisch</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='keuken' value='frans' id="fransFilter">
+                <span>Frans</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='keuken' value='wereldkeuken' id="wereldkeukenFilter">
+                <span>Wereldkeuken</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='keuken' value='italiaans' id="italiaansFilter">
+                <span>Italiaans</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='keuken' value='grieks' id="grieksFilter">
+                <span>Grieks</span>
+              </label></li>
+            <li> <label class="checkbox">
+                <input type="checkbox" name='keuken' value='thais' id="thaisFilter">
+                <span>Thais</span>
+              </label></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section boekenMain niet verwijderen -->
+    <section class="boekenMain">
+    </section>
+  </section> <!-- Main einde -->
+
+
+
+
+
+  <!-- Footer menu -->
+  <footer>
+    <div class="container">
+      <div class="menu">
+        <a title="Cuisine Home" href="../../index.html#">
+          <h1>Cuisine. Kookboeken, recepten, en meer ...</h1>
+        </a>
+        <ul>
+          <li><a href="../../pages/campagne.html">Campagne</a></li>
+          <li><a href="../../pages/recepten/recepten.html">Recepten</a></li>
+          <li><a href="../../pages/nieuws/nieuws.html">Nieuws</a></li>
+          <li><a href="../../pages/over-ons.html">Over Cuisine</a></li>
+          <li><a href="../../pages/contact.html">Contact</a></li>
+          <li><a class="active" href="../../pages/shop/shop.html">Shop</a></li>
+        </ul>
+      </div>
+
+      <div class="social">
+        <ul>
+          <li><a class="facebook" title="Facebook" target="_blank" href="https://facebook.com">Facebook</a></li>
+          <li><a class="twitter" title="Twitter" target="_blank" href="https://twitter.com">Twitter</a></li>
+          <li><a class="youtube" title="Youtube" target="_blank" href="https://youtube.com">Youtube</a></li>
+        </ul>
+
+        <address>
+          <ul>
+            <li>Cuisine B.V.</li>
+            <li>Egelenburg 150-152</li>
+            <li>1081 GK | Amsterdam</li>
+          </ul>
+        </address>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Cuisine B.V. copyright <span id="currentYear"></span></p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="../../js/boeken.js"></script>
+  <script src="../../js/boeken-database.js"></script>
+  <script src="../../js/filter-boeken-v20.js"></script>
+  <script src="../../js/filter-teller-boeken.js"></script>
+  <script src="../../js/uitklapmenu-v3.js"></script>
+  <script src="../../js/footer-date.js"></script>
+  <noscript>Your browser does not support JavaScript!</noscript>
+</body>
+
+</html>

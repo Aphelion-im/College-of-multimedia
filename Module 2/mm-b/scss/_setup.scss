@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css?family=Raleway:500,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:700i&display=swap');
+
+
+// VARIABELEN
+// Kleuren
+// Huisstijl kleuren
+$cuisine-blauw: #418C9F;
+$cuisine-oranje: #D98A3F;
+$cuisine-blauw-1: #a0c5cf;
+$nigella-rose: #e397be;
+// Shades
+$wit: #fff;
+$zwart: #000;
+
+// Font
+$merriweather-font: 'Merriweather',serif;
+$raleway-font: 'Raleway', sans-serif;
+
+// Mixins
+@mixin heroBackground {
+	background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin boekAchtergrond {
+	background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Algemene rules */
+html {
+	font-family: $raleway-font;
+	font-size: 100%;
+	font-weight: 500;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1280px;
+	position: relative;
+	width: 90%;
+}
+
+::selection {
+	color: $wit;
+	background-color: $cuisine-blauw;
+}
+
+/* Responsive images */
+img {
+	height: auto;
+	width: 100%;
+}
+
+/* Zet een onderdeel uit */
+.invisible {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+a:active,
+footer .menu a:active,
+footer .menu a.active {
+	color: $cuisine-oranje;
+}
+
+header li.active {
+	background-color: $cuisine-oranje;
+}
+
+/* Typografie */
+h2 {
+	color: $cuisine-blauw;
+	flex: 100%; //Neem 1 hele regel in beslag met flex direction: row, met flex-wrap.
+	font-family: $raleway-font;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: $raleway-font;
+	text-align: left;
+  color: $cuisine-oranje;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+p {
+	line-height: 1.25;
+}

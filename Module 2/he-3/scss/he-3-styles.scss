@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+@import "setup"; //Variabelen, mixins, wrapper, container en algemene settings. 
+@import "fixes"; //Compatibility fixes, ClearFix, etc.
+@import "test"; //Classes om te testen.
+@import "components/buttons"; //Knoppen
+@import "components/video-js"; //Video JS
+@import "shame"; //Last minute updates
+
+/* Backgrounds */
+.bg {
+	background-image: url("../images/backgrounds/background-thor-ragnarok-1280x720-optimized.jpg");
+	@include background;
+}
+
+.bg2 {
+	background-image: url("../images/backgrounds/thor-wallpaper-hd.jpg");
+	@include background;
+}
+
+/* Logo's */
+.logo {
+	height: auto;
+	position: absolute;
+	right: 24px;
+	top: 24px;
+	width: 300px;
+}
+
+.logo2 {
+	bottom: 24px;
+	height: auto;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	width: 700px;
+}
+
+/* Navigatie */
+.navHome {
+	height: 300px;
+	position: absolute;
+	right: 24px;
+	top: 225px;
+	width: 250px;
+}
+
+.fa-long-arrow-alt-left {
+	color: $text-color;
+	float: left;
+	font-size: $font-size-lg;
+	left: 24px;
+	text-shadow: 2px 2px $shadow-color;
+	transition: color 500ms;
+
+	&:hover {
+		color: $button-hover;
+	}
+
+}
+
+.fa-long-arrow-alt-right {
+	color: $text-color;
+	float: right;
+	font-size: 3rem;
+	right: 24px;
+	text-shadow: 2px 2px $shadow-color;
+	transition: color 500ms;
+}
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- SEO -->
+  <title>Recepten - Cuisine. Kookboeken, recepten, en meer ...</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Recepten. Cuisine. Kookboeken, recepten, en meer ...">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Meyer's reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <!-- Master stylesheet -->
+  <link href="../../css/mm-b-styles.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a title="Cuisine Home" href="../../index.html">
+        <h1>Cuisine. Kookboeken, recepten, en meer ...</h1>
+      </a>
+      <nav>
+        <label for="showMenu" id="showMenuLabel"></label>
+        <input type="checkbox" id="showMenu" role="button">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../pages/campagne.html">Campagne</a></li>
+          <li class="active"><a href="recepten.html">Recepten</a></li>
+          <li><a href="../../pages/nieuws/nieuws.html">Nieuws</a></li>
+          <li><a href="../../pages/over-ons.html">Over Ons</a></li>
+          <li><a href="../../pages/contact.html">Contact</a></li>
+          <li><a href="../../pages/shop/winkelwagen.html">Winkelwagen</a></li>
+          <li><a href="../../pages/shop/shop.html">Shop</a></li>
+        </ul>
+      </nav>
+      <ul class="headerIcons">
+        <li><a class="mijnAccountIcon" title="Mijn account" href="../../pages/shop/mijn-account.html">Mijn Account</a>
+        </li>
+        <li><a class="winkelwagenIcon" title="Winkelwagen" href="../../pages/shop/winkelwagen.html">Winkelwagen</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="main">
+    <section class="receptenFilter">
+      <div class="container">
+        <h2>Recepten</h2>
+        <span></span>
+        <ul id="menu">
+          <li><label class="checkbox">
+              <input type="checkbox" name='dieet' value='vlees' id="vleesFilter">
+              <span>Vlees</span>
+            </label></li>
+          <li><label class="checkbox">
+              <input type="checkbox" name='dieet' value='vis' id="visFilter">
+              <span>Vis</span>
+            </label></li>
+          <li><label class="checkbox">
+              <input type="checkbox" name='dieet' value='vegetarisch' id="vegetarischFilter">
+              <span>Vegetarisch</span>
+            </label></li>
+        </ul>
+
+        <ul id="menu2">
+          <li> <label class="checkbox">
+              <input type="checkbox" name='bereiding' value='koken' id="kokenFilter">
+              <span title="Koken" class="icoonPan"></span>
+            </label></li>
+          <li> <label class="checkbox">
+              <input type="checkbox" name='bereiding' value='braden' id="bradenFilter">
+              <span title="Braden" class="icoonOven"></span>
+            </label></li>
+          <li> <label class="checkbox">
+              <input type="checkbox" name='bereiding' value='bakken' id="bakkenFilter">
+              <span title="Bakken" class="icoonBarbecue"></span>
+            </label></li>
+        </ul>
+        <div class="rangeSlider">
+          <div title="Aantal personen" class="aantalPersonen"></div>
+          <input id="rangeSlider" type="range" title="Aantal personen" name="aantalpersonen" min="1" max="10" value="1">
+          <div id="sliderCounterLeft">1</div>
+          <div id="sliderCounterRight">1</div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Footer menu -->
+  <footer>
+    <div class="container">
+      <div class="menu">
+        <a title="Cuisine Home" href="../../index.html#">
+          <h1>Cuisine. Kookboeken, recepten, en meer ...</h1>
+        </a>
+        <ul>
+          <li><a href="../../pages/campagne.html">Campagne</a></li>
+          <li><a class="active" href="recepten.html">Recepten</a></li>
+          <li><a href="../../pages/nieuws/nieuws.html">Nieuws</a></li>
+          <li><a href="../../pages/over-ons.html">Over Cuisine</a></li>
+          <li><a href="../../pages/contact.html">Contact</a></li>
+          <li><a href="../../pages/shop/shop.html">Shop</a></li>
+        </ul>
+      </div>
+
+      <div class="social">
+        <ul>
+          <li><a class="facebook" title="Facebook" target="_blank" href="https://facebook.com">Facebook</a></li>
+          <li><a class="twitter" title="Twitter" target="_blank" href="https://twitter.com">Twitter</a></li>
+          <li><a class="youtube" title="Youtube" target="_blank" href="https://youtube.com">Youtube</a></li>
+        </ul>
+
+        <address>
+          <ul>
+            <li>Cuisine B.V.</li>
+            <li>Egelenburg 150-152</li>
+            <li>1081 GK | Amsterdam</li>
+          </ul>
+        </address>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Cuisine B.V. copyright <span id="currentYear"></span></p>
+    </div>
+  </footer>
+
+
+
+  <!-- Scripts -->
+  <script src="../../js/recepten.js"></script>
+  <script src="../../js/recepten-database.js"></script>
+  <script src="../../js/filter-recepten-v17.js"></script>
+  <script src="../../js/filter-teller-recepten.js"></script>
+  <script src="../../js/footer-date.js"></script>
+  <noscript>Your browser does not support JavaScript!</noscript>
+</body>
+
+</html>

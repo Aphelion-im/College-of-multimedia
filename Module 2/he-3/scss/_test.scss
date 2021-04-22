@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* Test classes */
+.test {
+	@include border-color ($test-color-1);
+}
+
+.test2 {
+	@include border-color ($test-color-2);
+}

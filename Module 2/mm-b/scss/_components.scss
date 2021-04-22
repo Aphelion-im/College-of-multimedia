@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+/* Buttons */
+.knopOranje,
+.knopGrijs {
+  background-color: $cuisine-oranje;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  display: inline-block;
+  font-family: $raleway-font;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 250ms ease-in;
+  width: 270px;
+}
+
+/* Algemene regel voor alle cards met daarin een oranje knop */
+.card:hover .knopOranje {
+  background-color: $cuisine-blauw;
+}
+
+.knopOranje:hover {
+  background-color: $cuisine-blauw;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.knopBlauw {
+  background-color: $cuisine-blauw;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.knopGrijs {
+  cursor: not-allowed !important;
+  background-color: #ccc;
+  width: 100%;
+}
+
+.knopGrijs:hover {
+  background-color: #ccc;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+// Adaption from: https://dev.to/proticm/styling-html-checkboxes-is-super-easy-302o
+/* Form checkbox */
+.contact form .checkbox,
+#menu .checkbox,
+#menu2 .checkbox,
+.mijnAccount .checkbox {
+  cursor: pointer;
+  display: inline-flex;
+  margin: 4px 0;
+  position: relative;
+}
+
+.contact form .checkbox>span,
+#menu .checkbox>span,
+#menu2 .checkbox>span,
+.mijnAccount .checkbox>span {
+  color: #34495e;
+  padding: 0.5rem 0.25rem;
+}
+
+.contact form .checkbox>span {
+  position: absolute;
+  left: 35px;
+  top: 0;
+}
+
+.mijnAccount .checkbox>span {
+  vertical-align: top;
+  position: relative;
+  top: 8.5px;
+}
+
+
+
+
+.contact form .checkbox>input,
+#menu .checkbox>input,
+#menu2 .checkbox>input,
+.mijnAccount .checkbox>input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $wit;
+  border-radius: 50%;
+  border: 1px solid $cuisine-blauw;
+  cursor: pointer;
+  height: 25px;
+  outline: none;
+  transition-duration: 0.3s;
+  width: 25px;
+}
+
+.contact form .checkbox>input:checked,
+#menu .checkbox>input:checked,
+#menu2 .checkbox>input:checked,
+.mijnAccount .checkbox>input:checked {
+  border: 7px solid $cuisine-blauw;
+}
+
+/* Style input Range generator */
+// https://www.cssportal.com/style-input-range/
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 31px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+input[type="range"]::before {
+  background-color: $cuisine-blauw;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 16px;
+  transform: translate(1px, 7px);
+  width: 16px;
+}
+
+input[type="range"]::after {
+  background-color: $cuisine-blauw;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 16px;
+  transform: translate(-1px, 7px);
+  width: 16px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: $cuisine-blauw;
+  border-radius: 1px;
+  border: 0px solid $zwart;
+  box-shadow: 0px 0px 0px $zwart;
+  cursor: pointer;
+  height: 5px;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: $cuisine-blauw-1;
+  border-radius: 24px;
+  border: 1px solid $cuisine-blauw;
+  box-shadow: 0px 0px 0px $zwart;
+  cursor: pointer;
+  height: 24px;
+  margin-top: -10px;
+  width: 24px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: $cuisine-blauw;
+}
+
+input[type="range"]::-moz-range-track {
+  background: $cuisine-blauw;
+  border-radius: 1px;
+  border: 0px solid $zwart;
+  box-shadow: 0px 0px 0px $zwart;
+  cursor: pointer;
+  height: 5px;
+  width: 100%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: $cuisine-blauw-1;
+  border-radius: 24px;
+  border: 1px solid $cuisine-blauw;
+  box-shadow: 0px 0px 0px $zwart;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+/* Iconen */
+.mijnAccountIcon {
+  background-position: -16px -64px;
+}
+
+.mijnAccountIcon:hover {
+  background-position: -106px -65px;
+}
+
+.mijnAccountIcon:active {
+  background-position: -184px -65px;
+}
+
+.winkelwagenIcon {
+  background-position: -65px -64px;
+}
+
+.winkelwagenIcon:hover {
+  background-position: -145px -65px;
+}
+
+.winkelwagenIcon:active {
+  background-position: -223px -65px;
+}
+
+/* Mijn account icoon active */
+header .headerIcons li a.mijnAccountIcon.active {
+  background-position: -184px -65px;
+}
+
+header .headerIcons li a.mijnAccountIcon.active:hover {
+  background-position: -106px -65px;
+}
+
+/* Winkelwagen icoon active */
+header .headerIcons li a.winkelwagenIcon.active {
+  background-position: -223px -65px;
+}
+
+header .headerIcons li a.winkelwagenIcon.active:hover {
+  background-position: -145px -65px;
+}
+
+/* Cuisine iconen */
+
+/* Vlees icoon: icoonKip */
+.icoonKip {
+  background-position: -13px -113px;
+}
+
+/* Vegetarisch icoon: icoonCorn */
+.icoonCorn {
+  background-position: -159px -114px;
+}
+
+/* Vis icoon: icoonVis */
+.icoonVis {
+  background-position: -85px -114px;
+}
+
+/* Koken icoon: icoonPan */
+.icoonPan {
+  background-position: -48px -114px;
+}
+
+/* Bakken icoon: icoonBarbecue */
+.icoonBarbecue {
+  background-position: -191px -114px;
+}
+
+/* Braden icoon: icoonBarbecue */
+.icoonOven {
+  background-position: -227px -114px;
+}
+
+.icoonTijd {
+  background-position: -125px -114.5px;
+}
+
+/* Social media iconen */
+.facebook {
+  background-position: -28px -253px;
+}
+
+.twitter {
+  background-position: -96px -253px;
+}
+
+.youtube {
+  background-position: -169px -253px;
+}
+
+.aantalPersonen {
+  background-position: -264px -104px;
+}
+
+.euroTeken {
+  background-position: -307px -105px;
+}
+
+/* Uitklapmenu iconen */
+i.navUp {
+  background-image: url("../images/icons/icons.svg");
+  background-position: -245px -179px;
+  background-size: 1088px 488px;
+  display: inline-block;
+  font-size: 0;
+  height: 24px;
+  margin-left: 4px;
+  transition: transform 150ms ease-in;
+  width: 24px;
+}
+
+i.navDown {
+  background-image: url("../images/icons/icons.svg");
+  background-position: -276px -179px;
+  background-size: 1088px 488px;
+  display: inline-block;
+  font-size: 0;
+  height: 24px;
+  margin-left: 4px;
+  transform: rotate(360deg);
+  width: 24px;
+}

@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* Hero backgrounds */
+.cuisineBackground {
+  background-image: url("../images/hero/cuisine-keukenblad-ingredienten-o.jpg");
+  @include heroBackground;
+}
+
+.nigellaBackground {
+  background-image: url("../images/hero/hero-nigella-rode-jurk-o.jpg");
+  @include heroBackground;
+}
+
+.overOnsBackground {
+  background-image: url("../images/hero/hero-4-o.jpg");
+  @include heroBackground;
+}
+
+.bamisoepBackground {
+  background-image: url("../images/hero/bami-soep-o.jpg");
+  @include heroBackground;
+}
+
+.thaichickenBackground {
+  background-image: url("../images/recepten/thai-chicken-o.jpg");
+  @include heroBackground;
+}
+
+.tagliatelleBackground {
+  background-image: url("../images/recepten/tagliatelle-o.jpg");
+  @include heroBackground;
+}
+
+.welkdeelvandekoeBackground {
+  background-image: url("../images/artikelen/koe/steak-veal-o.jpg");
+  @include heroBackground;
+}
+
+.sushiBackground {
+  background-image: url("../images/hero/sushi-o.jpg");
+  @include heroBackground;
+}
+
+.shakshukaBackground {
+  background-image: url("../images/hero/shakshuka-o.jpg");
+  @include heroBackground;
+}
+
+.thaiseCurryBackground {
+  background-image: url("../images/hero/thaise-curry-o.jpg");
+  @include heroBackground;
+}
+
+.vegetarischeSushiBackground {
+  background-image: url("../images/hero/vegetarische-sushi-o.jpg");
+  @include heroBackground;
+}
+
+.wortelsoepMetKurkumaBackground {
+  background-image: url("../images/hero/wortelsoep-met-kurkuma-o.jpg");
+  @include heroBackground;
+}
+
+.vispanMetSchelvisEnPreiBackground {
+  background-image: url("../images/hero/vispan-met-schelvis-en-prei-o.jpg");
+  @include heroBackground;
+}
+
+/* Nieuwste boeken achtergronden */
+.nigella {
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%),
+    url("../images/boeken/simply-nigella/simply-nigella-boek-o.jpg");
+  @include boekAchtergrond;
+}
+
+.sweet {
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%),
+    url("../images/boeken/sweet/sweet-voorzijde-o.jpg");
+    @include boekAchtergrond;
+}
+
+.jamie {
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%),
+    url("../images/boeken/jamies-superfood/jamies-super-food-o.jpg");
+    @include boekAchtergrond;
+}

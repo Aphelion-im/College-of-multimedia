@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* Buttons */
+.button {
+  @include text-style (bold);
+  background-color: $button-background;
+  border-radius: $border-radius;
+  display: block;
+  margin: 32px 0;
+  padding: 16px 0;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 500ms;
+  width: 200px;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  &:first-child {
+    margin: 0 0 32px 0;
+  }
+
+}

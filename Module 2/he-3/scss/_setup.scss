@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+/* Font Import */
+@font-face {
+  font-family: 'thor_ragnarokregular';
+  src: url('../fonts/thor_ragnarok-webfont.woff2') format('woff2'),
+    url('../fonts/thor_ragnarok-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Variabelen
+$background-color: #000;
+$border-radius: 8px;
+$button-background: #1C3B4A;
+$button-hover: #227fbe;
+$font-size-lg: 3rem;
+$font-size-md: 2rem;
+$font-size-sm: 1rem;
+$font-thor: thor_ragnarokregular, Verdana, sans-serif;
+$font-weight: ("normal": 400, "bold": 700);
+$shadow-color: rgba(0, 0, 0, 0.7);
+$test-color-1: #f00;
+$test-color-2: #0f0;
+$text-color: #fff;
+
+//Mixins
+@mixin background {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 720px;
+	min-width: 1280px;
+}
+
+@mixin border-color ($color) {
+	border: 1px solid $color;
+}
+
+@mixin text-style ($weight) {
+	color: $text-color;
+	font-family: $font-thor;
+	font-size: $font-size-sm;
+	text-transform: uppercase;
+	font-weight: map-get($font-weight, $weight);
+}
+
+/* Algemene rules */
+html {
+	@include text-style (normal);
+	background-color: $background-color;
+	height: 100%;
+}
+
+.wrapper {
+	margin: 0 auto;
+	position: relative;
+	width: 1280px;
+}
